@@ -61,6 +61,8 @@
 
     <?php include_once './eventos.php'; ?>
 
+    <?php include_once './equipe.php'; ?>
+
     <?php include_once './reserva.php'; ?>
 
     <?php include_once './galeria.php'; ?>
