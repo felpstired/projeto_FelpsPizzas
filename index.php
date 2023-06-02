@@ -37,6 +37,13 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <?php 
+  
+  include_once './config/conexao.php';
+  include_once './config/constantes.php';
+  include_once './func/functions.php';
+  
+  ?>
 </head>
 
 <body>
@@ -46,6 +53,27 @@
   <?php include_once './banner1.php'; ?>
 
   <main id="main">
+
+  
+  <?php
+  
+  // echo DATATIMEATUALBR . '<br>';
+  // echo DATATIMEATUAL . '<br>';
+  // echo URLBASEPATH . '<br>';
+  // echo BASEPATH . '<br>';
+  // echo BASEPATHFILE . '<br>';
+  // echo BASEPATHVIRTUAL . '<br>';
+  // echo DOMINIO . '<br>';
+  
+  // $listar = listarRegistros();
+  // if ($listar === false) {
+  //   echo '<h6 class="mt-5 p-3">Não existe registros no banco!</h6>';
+  // } else {
+  //   print_r($listar);
+  // }
+  
+  ?>
+
 
     <?php include_once './sobre.php'; ?>
 
