@@ -46,7 +46,7 @@
             <?php  
             
             foreach ($listar as $itemLista){
-              $icon = $itemLista->icon;
+              $icon = $itemLista->icon; 
               if ($icon != '') {
                 
                 $idcard = $itemLista->idcard;

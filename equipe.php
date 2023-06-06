@@ -1,10 +1,17 @@
+    <?php 
+    
+    
+    
+    ?>
+    
+    
     <!-- ======= Chefs Section ======= -->
     <section id="chefs" class="chefs section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Chefs</h2>
-          <p>Our <span>Proffesional</span> Chefs</p>
+          <h2>Equipe</h2>
+          <p>Nossos <span>Profissionais</span> Chefes de Cozinha</p>
         </div>
 
         <div class="row gy-4">

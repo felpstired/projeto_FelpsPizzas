@@ -1,114 +1,90 @@
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container" data-aos="fade-up">
+<?php
 
-        <div class="section-header">
-          <h2>Testimonials</h2>
-          <p>What Are They <span>Saying About Us</span></p>
-        </div>
+$listar = listarRegistros('idpessoas, nome', 'tbpessoas', 'A');
 
-        <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
+?>
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Saul Goodman</h3>
-                      <h4>Ceo &amp; Founder</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-header">
+      <h2>Testimonials</h2>
+      <p>O que estão <span>Falando sobre nós</span></p>
+    </div>
+
+    <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <?php
+        if ($listar === false) {
+          echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
+        } else {
+          foreach ($listar as $itemLista) {
+            $idpessoa = $itemLista->idpessoas;
+            $nome = $itemLista->nome;
+
+            $listarb = listarRegistrosPar('comentario, profissao, estrelas, imagem', 'tbavaliacoes', 'A', 'idpessoas', $idpessoa);
+            if ($listarb === false) {
+              echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
+            } else {
+              foreach ($listarb as $itemListab) {
+                $comentario = $itemListab->comentario;
+                $profissao = $itemListab->profissao;
+                $estrelas = $itemListab->estrelas;
+                $imagem = $itemListab->imagem;
+
+                ?>
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="row gy-4 justify-content-center">
+                      <div class="col-lg-6">
+                        <div class="testimonial-content">
+                          <p>
+                            <i class="bi bi-quote quote-icon-left"></i>
+                            <?php echo $comentario; ?>
+                            <i class="bi bi-quote quote-icon-right"></i>
+                          </p>
+                          <h3>
+                            <?php echo $nome; ?>
+                          </h3>
+                          <h4>
+                            <?php echo $profissao; ?>
+                          </h4>
+                          <div class="stars">
+                            <?php
+
+                            for ($i = 0; $i < 5; $i++) {
+                              if ($estrelas > $i) {
+                                echo '<i class="bi bi-star-fill"></i>';
+                              } else {
+                                echo '<i class="bi bi-star"></i>';
+                              }
+                            }
+
+                            ?>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 text-center">
+                        <img src="<?php echo $imagem; ?>" class="img-fluid testimonial-img" alt="">
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-1.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+                </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Sara Wilsson</h3>
-                      <h4>Designer</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-2.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+                <?php
+              }
+            }
+          }
+        }
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Jena Karlis</h3>
-                      <h4>Store Owner</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-3.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>John Larson</h3>
-                      <h4>Entrepreneur</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-4.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
+        ?>
 
       </div>
-    </section><!-- End Testimonials Section -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section><!-- End Testimonials Section -->
