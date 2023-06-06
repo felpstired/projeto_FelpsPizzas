@@ -44,7 +44,8 @@
             <div class="row gy-4">
 
             <?php  
-            
+
+            $delay = 2;
             foreach ($listar as $itemLista){
               $icon = $itemLista->icon; 
               if ($icon != '') {
@@ -60,7 +61,7 @@
             
             ?>
 
-              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-xl-4" data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>00">
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="<?php echo $icon; ?>"></i>
                   <h4><?php echo $titulo; ?></h4>
@@ -69,7 +70,8 @@
               </div><!-- End Icon Box -->
 
             <?php 
-            
+
+              $delay++;
               }
             }
 

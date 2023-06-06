@@ -16,8 +16,18 @@ insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadas
 insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (3,'assets/img/menu/menu-item-2.png','Aut Luia','Lorem, deren, trataro, filede, nerada',14.95,'2023-04-28 12:35:43');
 insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (3,'assets/img/menu/menu-item-3.png','Est Eligendi','Lorem, deren, trataro, filede, nerada',8.95,'2023-04-28 12:35:43');
 insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (4,'assets/img/menu/menu-item-4.png','Eos Luibusdam','Lorem, deren, trataro, filede, nerada',10.95,'2023-04-28 12:35:43');
-insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (4,'assets/img/menu/angolagoku.jpg','supasayjins','Lorem, deren, trataro, filede, nerada',12.95,'2023-04-28 12:35:43');
+insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (4,'assets/img/menu/menu-item-5.png','Luibusdam Eos','Lorem, deren, trataro, filede, nerada',12.95,'2023-04-28 12:35:43');
 insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (4,'assets/img/menu/menu-item-6.png','Laboriosam Direva','Lorem, deren, trataro, filede, nerada',9.95,'2023-04-28 12:35:43');
+
+-- insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (1,'assets/img/menu/menu-item-4.png','Eos Luibusdam','Lorem, deren, trataro, filede, nerada',10.95,'2023-04-28 12:35:43');
+-- insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (1,'assets/img/menu/menu-item-5.png','Luibusdam Eos','Lorem, deren, trataro, filede, nerada',12.95,'2023-04-28 12:35:43');
+-- insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (1,'assets/img/menu/menu-item-6.png','Laboriosam Direva','Lorem, deren, trataro, filede, nerada',9.95,'2023-04-28 12:35:43');
+-- insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (1,'assets/img/menu/menu-item-1.png','Magnam Tiste','Lorem, deren, trataro, filede, nerada',5.95,'2023-04-28 12:35:43');
+-- insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (1,'assets/img/menu/menu-item-2.png','Aut Luia','Lorem, deren, trataro, filede, nerada',14.95,'2023-04-28 12:35:43');
+-- insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (1,'assets/img/menu/menu-item-3.png','Est Eligendi','Lorem, deren, trataro, filede, nerada',8.95,'2023-04-28 12:35:43');
+-- insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (1,'assets/img/menu/menu-item-4.png','Eos Luibusdam','Lorem, deren, trataro, filede, nerada',10.95,'2023-04-28 12:35:43');
+-- insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (1,'assets/img/menu/menu-item-5.png','Luibusdam Eos'','Lorem, deren, trataro, filede, nerada',12.95,'2023-04-28 12:35:43');
+-- insert into tbcardapio (idmenucardapio, imagem, tituloimg, descimg, preco, cadastro) values (1,'assets/img/menu/menu-item-6.png','Laboriosam Direva','Lorem, deren, trataro, filede, nerada',9.95,'2023-04-28 12:35:43');
 
 
 -- INSERT NA TABELA DE PESSOAS
@@ -25,6 +35,10 @@ insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Saul Goodm
 insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Sara Wilsson','sarawilsson@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
 insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Jena Karlis','jenakarlis@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
 insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('John Larson','johnlarson@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
+
+-- insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Walter White','walterwhite@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
+-- insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Sarah Jhonson','sarahjhonson@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
+-- insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('William Anderson','williananderson@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
 
 
 -- INSERT NA TABELA DE AVALIACOES
@@ -40,4 +54,13 @@ insert into tbeventos (titulo, preco, descricao, imagem, cadastro) values ('Fest
 insert into tbeventos (titulo, preco, descricao, imagem, cadastro) values ('Festas de Aniversário',499,'Laborum aperiam atque omnis minus omnis est qui assumenda quos. Quis id sit quibusdam. Esse quisquam ducimus officia ipsum ut quibusdam maxime. Non enim perspiciatis.','assets/img/events-3.jpg','2023-04-28 12:35:43');
 
 
+-- INSERT NA TABELA DE FUNCIONARIOS
+insert into tbfuncionarios (idpessoas, cargo, admissao, cadastro) values (5,'Master Chef','2023-05-13 17:45:23','2023-05-13 17:45:23');
+insert into tbfuncionarios (idpessoas, cargo, admissao, cadastro) values (6,'Confeiteira','2023-05-13 17:45:23','2023-05-13 17:45:23');
+insert into tbfuncionarios (idpessoas, cargo, admissao, cadastro) values (7,'Cozinheiro','2023-05-13 17:45:23','2023-05-13 17:45:23');
+
+
 -- INSERT NA TABELA DE EQUIPE/CHEFS
+insert into tbequipe (idfuncionarios, descricao, cadastro, imagem) values (1,'Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.','2023-05-13 17:45:23', 'assets/img/chefs/chefs-1.jpg');
+insert into tbequipe (idfuncionarios, descricao, cadastro, imagem) values (2,'Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.','2023-05-13 17:45:23', 'assets/img/chefs/chefs-2.jpg');
+insert into tbequipe (idfuncionarios, descricao, cadastro, imagem) values (3,'Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.','2023-05-13 17:45:23', 'assets/img/chefs/chefs-3.jpg');
