@@ -64,3 +64,25 @@ insert into tbfuncionarios (idpessoas, cargo, admissao, cadastro) values (7,'Coz
 insert into tbequipe (idfuncionarios, descricao, cadastro, imagem) values (1,'Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.','2023-05-13 17:45:23', 'assets/img/chefs/chefs-1.jpg');
 insert into tbequipe (idfuncionarios, descricao, cadastro, imagem) values (2,'Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.','2023-05-13 17:45:23', 'assets/img/chefs/chefs-2.jpg');
 insert into tbequipe (idfuncionarios, descricao, cadastro, imagem) values (3,'Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.','2023-05-13 17:45:23', 'assets/img/chefs/chefs-3.jpg');
+
+
+-- INSERT NA TABELA DE EQUIPE/CHEFS
+insert into tbgaleria (imagem, cadastro) values ('assets/img/gallery/gallery-1.jpg','2023-05-14 15:36:17');
+insert into tbgaleria (imagem, cadastro) values ('assets/img/gallery/gallery-2.jpg','2023-05-14 15:36:17');
+insert into tbgaleria (imagem, cadastro) values ('assets/img/gallery/gallery-3.jpg','2023-05-14 15:36:17');
+insert into tbgaleria (imagem, cadastro) values ('assets/img/gallery/gallery-4.jpg','2023-05-14 15:36:17');
+insert into tbgaleria (imagem, cadastro) values ('assets/img/gallery/gallery-5.jpg','2023-05-14 15:36:17');
+insert into tbgaleria (imagem, cadastro) values ('assets/img/gallery/gallery-6.jpg','2023-05-14 15:36:17');
+insert into tbgaleria (imagem, cadastro) values ('assets/img/gallery/gallery-7.jpg','2023-05-14 15:36:17');
+insert into tbgaleria (imagem, cadastro) values ('assets/img/gallery/gallery-8.jpg','2023-05-14 15:36:17');
+
+
+-- INSERT NA TABELA DE REDES
+insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (1,'https://twitter.com/feeeelps','twitter','2023-05-15 11:29:57');
+insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (1,'https://www.facebook.com/gaming/feeeelps/','facebook','2023-05-15 11:29:57');
+insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (1,'https://www.instagram.com/felps11/','instagram','2023-05-15 11:29:57');
+insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (1,'https://br.linkedin.com/in/felps-developer-23329620b','linkedin','2023-05-15 11:29:57');
+insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (2,'https://twitter.com/feeeelps','twitter','2023-05-15 11:29:57');
+insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (2,'https://www.facebook.com/gaming/feeeelps/','facebook','2023-05-15 11:29:57');
+insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (2,'https://www.instagram.com/felps11/','instagram','2023-05-15 11:29:57');
+insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (3,'https://twitter.com/feeeelps','twitter','2023-05-15 11:29:57');

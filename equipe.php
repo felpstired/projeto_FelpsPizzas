@@ -74,7 +74,7 @@ $listarP = listarRegistros('idpessoas, nome', 'tbpessoas', 'A');
                               if ($redeL != '') {
 
                                 ?>
-                                <a href=""><i class="bi bi-<?php echo $tiporede; ?>"></i></a>
+                                <a href="<?php echo $redeL; ?>" target="blank"><i class="bi bi-<?php echo $tiporede; ?>"></i></a>
                                 <?php
 
                               }
