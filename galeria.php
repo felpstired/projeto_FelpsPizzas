@@ -5,7 +5,6 @@
 
     ?>
 
-
     <!-- ======= Gallery Section ======= -->
     <section id="gallery" class="gallery section-bg">
       <div class="container" data-aos="fade-up">
