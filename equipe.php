@@ -1,9 +1,8 @@
 <?php
 
-$listarP = listarRegistros('idpessoas, nome', 'tbpessoas', 'A');
+$listar = listarRegistrosJoin2('tbpessoas.nome, tbfuncionarios.idfuncionarios, tbfuncionarios.cargo, tbequipe.descricao, tbequipe.imagem', 'tbpessoas', 'INNER', 'tbfuncionarios', 'idpessoas', 'INNER', 'tbequipe', 'idfuncionarios', 'A');
 
 ?>
-
 
 <!-- ======= Chefs Section ======= -->
 <section id="chefs" class="chefs section-bg">
@@ -18,93 +17,70 @@ $listarP = listarRegistros('idpessoas, nome', 'tbpessoas', 'A');
 
       <?php
 
-      if ($listarP === false) {
+      // var_dump($listar);
+
+      if ($listar === false) {
         echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
       } else {
         $delay = 1;
-        foreach ($listarP as $itemLista) {
+        foreach ($listar as $itemLista) {
 
-          $idpessoas = $itemLista->idpessoas;
+
+          $idfunc = $itemLista->idfuncionarios;
           $nome = $itemLista->nome;
+          $cargo = $itemLista->cargo;
+          $descricao = $itemLista->descricao;
+          $imagem = $itemLista->imagem;
 
-          $listarF = listarRegistrosPar('idfuncionarios, cargo', 'tbfuncionarios', 'A', 'idpessoas', $idpessoas);
+      ?>
 
-          if ($listarF === false) {
-            echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
-          } else {
-            foreach ($listarF as $itemListaF) {
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>00">
+            <div class="chef-member">
+              <div class="member-img">
+                <img src="<?php echo $imagem; ?>" class="img-fluid" alt="">
 
-              $idfunc = $itemListaF->idfuncionarios;
-              $cargo = $itemListaF->cargo;
-
-              $listarE = listarRegistrosPar('descricao, imagem', 'tbequipe', 'A', 'idfuncionarios', $idfunc);
-
-              if ($listarE === false) {
-                echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
-              } else {
-                foreach ($listarE as $itemListaE) {
-
-                  $descricao = $itemListaE->descricao;
-                  $imagem = $itemListaE->imagem;
-
-
-
-
-
-                  ?>
-
-                  <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                    data-aos-delay="<?php echo $delay; ?>00">
-                    <div class="chef-member">
-                      <div class="member-img">
-                        <img src="<?php echo $imagem; ?>" class="img-fluid" alt="">
-
-                        <div class="social">
-                          <?php
-
-                          $listarR = listarRegistrosPar('rede, tiporede', 'tbredes', 'A', 'idfuncionarios', $idfunc);
-
-                          if ($listarR === false) {
-                            echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
-                          } else {
-                            foreach ($listarR as $itemListaR) {
-
-                              $redeL = $itemListaR->rede;
-                              $tiporede = $itemListaR->tiporede;
-                              if ($redeL != '') {
-
-                                ?>
-                                <a href="<?php echo $redeL; ?>" target="blank"><i class="bi bi-<?php echo $tiporede; ?>"></i></a>
-                                <?php
-
-                              }
-                            }
-                          }
-
-                          ?>
-                        </div>
-
-                      </div>
-                      <div class="member-info">
-                        <h4>
-                          <?php echo $nome; ?>
-                        </h4>
-                        <span>
-                          <?php echo $cargo; ?>
-                        </span>
-                        <p>
-                          <?php echo $descricao; ?>
-                        </p>
-                      </div>
-                    </div>
-                  </div><!-- End Chefs Member -->
-
+                <div class="social">
                   <?php
 
-                }
-              }
-            }
-          }
+                  $listarR = listarRegistrosPar('rede, tiporede', 'tbredes', 'A', 'idfuncionarios', $idfunc);
+
+                  if ($listarR === false) {
+                    echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
+                  } else {
+                    foreach ($listarR as $itemListaR) {
+
+                      $redeL = $itemListaR->rede;
+                      $tiporede = $itemListaR->tiporede;
+                      if ($redeL != '') {
+
+                  ?>
+                        <a href="<?php echo $redeL; ?>" target="blank"><i class="bi bi-<?php echo $tiporede; ?>"></i></a>
+                  <?php
+
+                      }
+                    }
+                  }
+
+                  ?>
+                </div>
+
+              </div>
+              <div class="member-info">
+                <h4>
+                  <?php echo $nome; ?>
+                </h4>
+                <span>
+                  <?php echo $cargo; ?>
+                </span>
+                <p>
+                  <?php echo $descricao; ?>
+                </p>
+              </div>
+            </div>
+          </div><!-- End Chefs Member -->
+
+      <?php
+
           $delay++;
         }
       }
