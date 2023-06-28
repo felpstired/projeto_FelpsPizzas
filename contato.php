@@ -1,4 +1,22 @@
-    <!-- ======= Contact Section ======= -->
+<?php 
+
+$listar = listarRegistros('endereco, telefone, email, horarios, mapa', 'tbcontatar', 'A');
+// var_dump($listar);
+if ($listar === false) {
+  echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
+} else {
+  foreach ($listar as $itemLista) {
+    $endereco = $itemLista->endereco;
+    $telefone = $itemLista->telefone;
+    $email = $itemLista->email;
+    $horarios = $itemLista->horarios;
+    $mapa = $itemLista->mapa;
+  }
+}
+
+?>
+
+<!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
@@ -8,7 +26,7 @@
         </div>
 
         <div class="mb-3">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.832742002238!2d-41.977114730363446!3d-18.87239292988428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb1a63ef8d13a4d%3A0x3df592970ecc66c7!2sR.%20Frutal%2C%20476%20-%20Nova%20Vila%20Bretas%2C%20Gov.%20Valadares%20-%20MG%2C%2035051-230!5e0!3m2!1spt-BR!2sbr!4v1685495884472!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="<?php echo $mapa; ?>" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div><!-- End Google Maps -->
 
         <div class="row gy-4">
@@ -17,8 +35,8 @@
             <div class="info-item  d-flex align-items-center">
               <i class="icon bi bi-map flex-shrink-0"></i>
               <div>
-                <h3>Our Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h3>Nosso Endereço</h3>
+                <p><?php echo $endereco; ?></p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -27,8 +45,8 @@
             <div class="info-item d-flex align-items-center">
               <i class="icon bi bi-envelope flex-shrink-0"></i>
               <div>
-                <h3>Email Us</h3>
-                <p>contact@example.com</p>
+                <h3>Nos envie um E-mail</h3>
+                <p><?php echo $email; ?></p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -37,8 +55,8 @@
             <div class="info-item  d-flex align-items-center">
               <i class="icon bi bi-telephone flex-shrink-0"></i>
               <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <h3>Ligue para Nós</h3>
+                <p><?php echo $telefone; ?></p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -47,9 +65,8 @@
             <div class="info-item  d-flex align-items-center">
               <i class="icon bi bi-share flex-shrink-0"></i>
               <div>
-                <h3>Opening Hours</h3>
-                <div><strong>Mon-Sat:</strong> 11AM - 23PM;
-                  <strong>Sunday:</strong> Closed
+                <h3>Horários de Funcionamento</h3>
+                <div><?php echo $horarios; ?>
                 </div>
               </div>
             </div>

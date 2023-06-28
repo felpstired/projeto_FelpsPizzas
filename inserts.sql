@@ -35,6 +35,7 @@ insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Saul Goodm
 insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Sara Wilsson','sarawilsson@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
 insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Jena Karlis','jenakarlis@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
 insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('John Larson','johnlarson@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
+insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Ana Alves','anaalves@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
 
 -- insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Walter White','walterwhite@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
 -- insert into tbpessoas (nome, email, telefone, cpf, cadastro) values ('Sarah Jhonson','sarahjhonson@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43');
@@ -58,6 +59,7 @@ insert into tbeventos (titulo, preco, descricao, imagem, cadastro) values ('Fest
 insert into tbfuncionarios (idpessoas, cargo, admissao, cadastro) values (5,'Master Chef','2023-05-13 17:45:23','2023-05-13 17:45:23');
 insert into tbfuncionarios (idpessoas, cargo, admissao, cadastro) values (6,'Confeiteira','2023-05-13 17:45:23','2023-05-13 17:45:23');
 insert into tbfuncionarios (idpessoas, cargo, admissao, cadastro) values (7,'Cozinheiro','2023-05-13 17:45:23','2023-05-13 17:45:23');
+insert into tbfuncionarios (idpessoas, cargo, admissao, cadastro) values (8,'CEO','2023-01-01 17:45:23','2023-05-13 17:45:23');
 
 
 -- INSERT NA TABELA DE EQUIPE/CHEFS
@@ -86,3 +88,12 @@ insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (2,'https:
 insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (2,'https://www.facebook.com/gaming/feeeelps/','facebook','2023-05-15 11:29:57');
 insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (2,'https://www.instagram.com/felps11/','instagram','2023-05-15 11:29:57');
 insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (3,'https://twitter.com/feeeelps','twitter','2023-05-15 11:29:57');
+
+
+-- INSERT NA TABELA DE IMAGENS DA PARTE DE RESERVA
+insert into tbimgreserva (imagem, cadastro) values ('assets/img/reservation.jpg','2023-05-15 11:29:57');
+
+
+-- INSERT NA TABELA DE CONTATAR
+insert into tbcontatar (endereco, telefone, email, horarios, cadastro) values ('Rua Ivo de Tassis, 120 - Nova JK, Gov. Valadares - MG, 35045-570','+55 33 9 1234-5678','felpspizza@contato.com','<strong>Seg-Sex:</strong> 11AM - 23PM;<strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57');
+insert into tbcontatar (endereco, telefone, email, horarios, cadastro) values ('A108 Adam Street, New York, NY 535022','+1 5589 55488 55','contact@example.com','<strong>Mon-Sat:</strong> 11AM - 23PM;<strong>Sunday:</strong> Closed','2023-05-15 11:29:57');
