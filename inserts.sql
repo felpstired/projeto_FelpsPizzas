@@ -94,6 +94,21 @@ insert into tbredes (idfuncionarios, rede, tiporede, cadastro) values (3,'https:
 insert into tbimgreserva (imagem, cadastro) values ('assets/img/reservation.jpg','2023-05-15 11:29:57');
 
 
--- INSERT NA TABELA DE CONTATAR
-insert into tbcontatar (endereco, telefone, email, horarios, cadastro) values ('Rua Ivo de Tassis, 120 - Nova JK, Gov. Valadares - MG, 35045-570','+55 33 9 1234-5678','felpspizza@contato.com','<strong>Seg-Sex:</strong> 11AM - 23PM;<strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57');
-insert into tbcontatar (endereco, telefone, email, horarios, cadastro) values ('A108 Adam Street, New York, NY 535022','+1 5589 55488 55','contact@example.com','<strong>Mon-Sat:</strong> 11AM - 23PM;<strong>Sunday:</strong> Closed','2023-05-15 11:29:57');
+-- INSERT NA TABELA DE MAPA
+insert into tbmapacontato (mapa, cadastro) values ('https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15100.338157341852!2d-41.9623483!3d-18.8833304!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb1a7d340d00e43%3A0xf3acb8b7a321ccf2!2sSENAI%20Governador%20Valadares%20UI%20Luiz%20Chaves!5e0!3m2!1spt-BR!2sbr!4v1687915635103!5m2!1spt-BR!2sbr','2023-05-15 11:29:57');
+insert into tbmapacontato (mapa, cadastro) values ('https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15100.338157341852!2d-41.9623483!3d-18.8833304!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb1a7d340d00e43%3A0xf3acb8b7a321ccf2!2sSENAI%20Governador%20Valadares%20UI%20Luiz%20Chaves!5e0!3m2!1spt-BR!2sbr!4v1687915635103!5m2!1spt-BR!2sbr','2023-05-15 11:29:57');
+
+
+-- INSERT NA TABELA DE CONTATO
+insert into tbcontato (idmapacontato, titulo, conteudo, cadastro) values (1,'Nosso Endereço','Rua Ivo de Tassis, 120 - Nova JK, Gov. Valadares - MG, 35045-570','2023-05-15 11:29:57');
+insert into tbcontato (idmapacontato, titulo, conteudo, cadastro) values (1,'Nos envie um E-mail','felpspizza@contato.com','2023-05-15 11:29:57');
+insert into tbcontato (idmapacontato, titulo, conteudo, cadastro) values (1,'Ligue para Nós','+55 33 9 1234-5678','2023-05-15 11:29:57');
+insert into tbcontato (idmapacontato, titulo, conteudo, cadastro) values (1,'Horários de Funcionamento','<strong>Seg-Sex:</strong> 11AM - 23PM;<strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57');
+
+
+-- insert into tbcontatar (endereco, telefone, email, horarios, cadastro) values ('Rua Ivo de Tassis, 120 - Nova JK, Gov. Valadares - MG, 35045-570','+55 33 9 1234-5678','felpspizza@contato.com','<strong>Seg-Sex:</strong> 11AM - 23PM;<strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57');
+-- insert into tbcontatar (endereco, telefone, email, horarios, cadastro) values ('A108 Adams St, Brooklyn, NY 535022, Estados Unidos','+1 0151 2222 33','contact@example.com','<strong>Mon-Sat:</strong> 11AM - 23PM;<strong>Sunday:</strong> Closed','2023-05-15 11:29:57');
+
+
+-- INSERT NA TABELA DE FOOTER
+-- insert into tb (endereco, telefone, email, horarios, cadastro) values ('Rua Ivo de Tassis, 120 - Nova JK, Gov. Valadares - MG, 35045-570','+55 33 9 1234-5678','felpspizza@contato.com','<strong>Seg-Sex:</strong> 11AM - 23PM;<strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57');

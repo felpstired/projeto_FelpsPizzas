@@ -16,6 +16,7 @@
           <li><a href="#events">Eventos</a></li>
           <li><a href="#chefs">Equipe</a></li>
           <li><a href="#gallery">Galeria</a></li>
+          <li><a href="#contact">Contato</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -33,7 +34,6 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contato</a></li>
         </ul>
       </nav><!-- .navbar -->
 
