@@ -100,15 +100,18 @@ insert into tbmapacontato (mapa, cadastro) values ('https://www.google.com/maps/
 
 
 -- INSERT NA TABELA DE CONTATO
-insert into tbcontato (idmapacontato, titulo, conteudo, cadastro) values (1,'Nosso Endereço','Rua Ivo de Tassis, 120 - Nova JK, Gov. Valadares - MG, 35045-570','2023-05-15 11:29:57');
-insert into tbcontato (idmapacontato, titulo, conteudo, cadastro) values (1,'Nos envie um E-mail','felpspizza@contato.com','2023-05-15 11:29:57');
-insert into tbcontato (idmapacontato, titulo, conteudo, cadastro) values (1,'Ligue para Nós','+55 33 9 1234-5678','2023-05-15 11:29:57');
-insert into tbcontato (idmapacontato, titulo, conteudo, cadastro) values (1,'Horários de Funcionamento','<strong>Seg-Sex:</strong> 11AM - 23PM;<strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57');
-
-
--- insert into tbcontatar (endereco, telefone, email, horarios, cadastro) values ('Rua Ivo de Tassis, 120 - Nova JK, Gov. Valadares - MG, 35045-570','+55 33 9 1234-5678','felpspizza@contato.com','<strong>Seg-Sex:</strong> 11AM - 23PM;<strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57');
--- insert into tbcontatar (endereco, telefone, email, horarios, cadastro) values ('A108 Adams St, Brooklyn, NY 535022, Estados Unidos','+1 0151 2222 33','contact@example.com','<strong>Mon-Sat:</strong> 11AM - 23PM;<strong>Sunday:</strong> Closed','2023-05-15 11:29:57');
+insert into tbcontato (idmapacontato, titulo, conteudo, cadastro, icone) values (1,'Nosso Endereço','Rua Ivo de Tassis, 120 - Nova JK, Gov. Valadares - MG, 35045-570','2023-05-15 11:29:57','bi-map');
+insert into tbcontato (idmapacontato, titulo, conteudo, cadastro, icone) values (1,'Nos envie um E-mail','felpspizza@contato.com','2023-05-15 11:29:57','bi-envelope');
+insert into tbcontato (idmapacontato, titulo, conteudo, cadastro, icone) values (1,'Ligue para Nós','+55 33 9 1234-5678','2023-05-15 11:29:57','bi-telephone');
+insert into tbcontato (idmapacontato, titulo, conteudo, cadastro, icone) values (1,'Horários de Funcionamento','<strong>Seg-Sex:</strong> 11AM - 23PM;ﾠ<strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57','bi-share');
 
 
 -- INSERT NA TABELA DE FOOTER
--- insert into tb (endereco, telefone, email, horarios, cadastro) values ('Rua Ivo de Tassis, 120 - Nova JK, Gov. Valadares - MG, 35045-570','+55 33 9 1234-5678','felpspizza@contato.com','<strong>Seg-Sex:</strong> 11AM - 23PM;<strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57');
+insert into tbfoot (endereco, telefone, email, horarios, cadastro) values ('Rua Ivo de Tassis, 120 - Nova JK<br> Gov. Valadares - MG, 35045-570<br>','+55 33 9 1234-5678','felpspizza@contato.com','<strong>Seg-Sex:</strong> 11AM - 23PM<br><strong>Sáb-Dom:</strong> Fechado','2023-05-15 11:29:57');
+
+
+-- INSERT NA TABELA DE REDESSITE
+insert into tbredessite (idfooter, rede, tiporede, cadastro) values (1,'https://twitter.com/feeeelps','twitter','2023-05-15 11:29:57');
+insert into tbredessite (idfooter, rede, tiporede, cadastro) values (1,'https://www.facebook.com/gaming/feeeelps/','facebook','2023-05-15 11:29:57');
+insert into tbredessite (idfooter, rede, tiporede, cadastro) values (1,'https://www.instagram.com/felps11/','instagram','2023-05-15 11:29:57');
+insert into tbredessite (idfooter, rede, tiporede, cadastro) values (1,'https://br.linkedin.com/in/felps-developer-23329620b','linkedin','2023-05-15 11:29:57');

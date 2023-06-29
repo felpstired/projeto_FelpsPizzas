@@ -1,15 +1,12 @@
 <?php 
 
-$listar = listarRegistros('endereco, telefone, email, horarios, mapa', 'tbcontatar', 'A');
+$listar = listarRegistros('idmapacontato, mapa', 'tbmapacontato', 'A');
 // var_dump($listar);
 if ($listar === false) {
   echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
 } else {
   foreach ($listar as $itemLista) {
-    $endereco = $itemLista->endereco;
-    $telefone = $itemLista->telefone;
-    $email = $itemLista->email;
-    $horarios = $itemLista->horarios;
+    $idmapa = $itemLista->idmapacontato;
     $mapa = $itemLista->mapa;
   }
 }
@@ -31,46 +28,37 @@ if ($listar === false) {
 
         <div class="row gy-4">
 
+        <?php 
+        
+        $listarB = listarRegistrosPar('titulo, conteudo, icone', 'tbcontato', 'A', 'idmapacontato', $idmapa);
+        // var_dump($listar);
+        if ($listarB === false) {
+          echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
+        } else {
+          foreach ($listarB as $itemListaB) {
+            $titulo = $itemListaB->titulo;
+            $conteudo = $itemListaB->conteudo;
+            $icon = $itemListaB->icone;
+          
+        
+        ?>
+
           <div class="col-md-6">
             <div class="info-item  d-flex align-items-center">
-              <i class="icon bi bi-map flex-shrink-0"></i>
+              <i class="icon bi <?php echo $icon; ?> flex-shrink-0"></i>
               <div>
-                <h3>Nosso Endereço</h3>
-                <p><?php echo $endereco; ?></p>
+                <h3><?php echo $titulo; ?></h3>
+                <p><?php echo $conteudo; ?></p>
               </div>
             </div>
           </div><!-- End Info Item -->
 
-          <div class="col-md-6">
-            <div class="info-item d-flex align-items-center">
-              <i class="icon bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Nos envie um E-mail</h3>
-                <p><?php echo $email; ?></p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-md-6">
-            <div class="info-item  d-flex align-items-center">
-              <i class="icon bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Ligue para Nós</h3>
-                <p><?php echo $telefone; ?></p>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-md-6">
-            <div class="info-item  d-flex align-items-center">
-              <i class="icon bi bi-share flex-shrink-0"></i>
-              <div>
-                <h3>Horários de Funcionamento</h3>
-                <div><?php echo $horarios; ?>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Info Item -->
+        <?php  
+        
+          }
+        }
+        
+        ?>
 
         </div>
 

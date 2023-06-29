@@ -38,6 +38,8 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <?php 
+
+  session_start();
   
   include_once './config/conexao.php';
   include_once './config/constantes.php';

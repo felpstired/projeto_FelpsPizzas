@@ -26,10 +26,10 @@ if ($listar === false) {
       <div class="col-lg-4 reservation-img" style="background-image: url(<?php echo $imagem; ?>);" data-aos="zoom-out" data-aos-delay="200"></div>
 
       <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
-        <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+        <form action="forms/acaoreserva.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <input type="text" name="nome" class="form-control" id="name" placeholder="Seu Nome" data-rule="minlen:4" data-msg="Favor inserir pelo menos 4 caracteres">
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -37,24 +37,24 @@ if ($listar === false) {
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6">
-              <input type="text" class="form-control" name="phone" id="phone" placeholder="Seu Telefone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <input type="text" class="form-control" name="telefone" id="phone" placeholder="Seu Telefone" data-rule="minlen:4" data-msg="Favor inserir pelo menos 4 caracteres">
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6">
-              <input type="text" name="date" class="form-control" id="date" placeholder="Data" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <input type="text" name="date" class="form-control" id="date" placeholder="Data" data-rule="minlen:4" data-msg="Favor inserir pelo menos 4 caracteres">
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6">
-              <input type="text" class="form-control" name="time" id="time" placeholder="Horário" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <input type="text" class="form-control" name="horario" id="time" placeholder="Horário" data-rule="minlen:4" data-msg="Favor inserir pelo menos 4 caracteres">
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6">
-              <input type="number" class="form-control" name="people" id="people" placeholder="N° de pessoas" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+              <input type="number" class="form-control" name="pessoas" id="people" placeholder="N° de pessoas" data-rule="minlen:1" data-msg="Favor inserir pelo menos 1 caractere">
               <div class="validate"></div>
             </div>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+            <textarea class="form-control" name="mensagem" rows="5" placeholder="Message"></textarea>
             <div class="validate"></div>
           </div>
           <div class="mb-3">

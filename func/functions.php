@@ -33,6 +33,23 @@ function listarRegistrosPar($campos, $tabela, $ativo, $param2, $valp2) {
     };
 };
 
+function listarRegistrosPar2($campos, $tabela, $ativo, $param2, $valp2) {
+    $conn = conectar();
+    try {
+        $sqlLista = $conn->prepare("SELECT $campos FROM $tabela WHERE ativo = ? AND $param2 = ?");
+        $sqlLista->bindValue(1, $ativo, PDO::PARAM_STR);
+        $sqlLista->bindValue(2, $valp2, PDO::PARAM_STR);
+        $sqlLista->execute();
+        if ($sqlLista->rowCount() > 0) {
+            return $sqlLista->fetchAll(PDO::FETCH_OBJ);
+        } else {
+            return false;
+        };
+    } catch (PDOException $e) {
+        return 'Não foi possível acessar os dados. Erro: ' . $e->getMessage();
+    };
+};
+
 function listarRegistrosJoin($campos, $tabela, $join, $tabela2, $id, $ativo) {
     $conn = conectar();
     try {
@@ -65,6 +82,39 @@ function listarRegistrosJoin2($campos, $tabela, $join, $tabela2, $id, $join2, $t
         };
     } catch (PDOException $e) {
         return 'Não foi possível acessar os dados. Erro: ' . $e->getMessage();
+    };
+};
+
+function inserirRegistrosReturnId($tabela, $campos, $valores) {
+    $conn = conectar();
+    try {
+        $sqlLista = $conn->prepare("INSERT INTO $tabela ($campos) VALUES ($valores, NOW())");
+        $resul = $sqlLista->execute();
+        if ($resul === false) {
+            $conn->rollback();
+            return false;
+        } else {
+            $id = $conn->lastInsertId();
+            return $id;
+        };
+    } catch (PDOException $e) {
+        return 'Não foi possível cadastrar os dados. Erro: ' . $e->getMessage();
+    };
+};
+
+function inserirRegistros($tabela, $campos, $valores) {
+    $conn = conectar();
+    try {
+        $sqlLista = $conn->prepare("INSERT INTO $tabela ($campos) VALUES ($valores, NOW())");
+        $resul = $sqlLista->execute();
+        if ($resul === false) {
+            $conn->rollback();
+            return false;
+        } else {
+            return true;
+        };
+    } catch (PDOException $e) {
+        return 'Não foi possível cadastrar os dados. Erro: ' . $e->getMessage();
     };
 };
 

@@ -1,15 +1,32 @@
-  <!-- ======= Footer ======= -->
+<?php 
+
+$listar = listarRegistros('idfooter, endereco, telefone, email, horarios', 'tbfoot', 'A');
+// var_dump($listar);
+if ($listar === false) {
+  echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
+} else {
+  foreach ($listar as $itemLista) {
+    $idfooter = $itemLista->idfooter;
+    $endereco = $itemLista->endereco;
+    $telefone = $itemLista->telefone;
+    $email = $itemLista->email;
+    $horarios = $itemLista->horarios;
+  }
+}
+
+?>
+
+<!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
     <div class="container">
       <div class="row gy-3">
-        <div class="col-lg-3 col-md-6 d-flex">
+        <div class="col-lg-3 col-md-6 footer-links d-flex">
           <i class="bi bi-geo-alt icon"></i>
           <div>
             <h4>Endereço</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022 - US<br>
+            <?php echo $endereco; ?>
             </p>
           </div>
 
@@ -20,8 +37,8 @@
           <div>
             <h4>Reservas</h4>
             <p>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Telefone:</strong> <?php echo $telefone; ?><br>
+              <strong>E-mail:</strong> <?php echo $email; ?><br>
             </p>
           </div>
         </div>
@@ -31,8 +48,7 @@
           <div>
             <h4>Horário de Funcionamento</h4>
             <p>
-              <strong>Mon-Sat: 11AM</strong> - 23PM<br>
-              Sunday: Closed
+              <?php echo $horarios; ?>
             </p>
           </div>
         </div>
@@ -40,10 +56,29 @@
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Follow Us</h4>
           <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+
+          <?php 
+          
+          $listarB = listarRegistrosPar('rede, tiporede', 'tbredessite', 'A', 'idfooter', $idfooter);
+          // var_dump($listar);
+          if ($listarB === false) {
+            echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não existe registros no banco!</h6>';
+          } else {
+          foreach ($listarB as $itemListaB) {
+            $rede = $itemListaB->rede;
+            $tiporede = $itemListaB->tiporede;
+
+          ?>
+
+            <a href="<?php echo $rede; ?>" target="blank" class="<?php echo $tiporede; ?>"><i class="bi bi-<?php echo $tiporede; ?>"></i></a>
+          
+          <?php 
+          
+            }
+          }
+          
+          ?>
+
           </div>
         </div>
 
