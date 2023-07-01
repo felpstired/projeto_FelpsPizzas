@@ -1215,8 +1215,8 @@ section {
 .book-a-table .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #df1529;
-  text-align: left;
+  background: #059652;
+  text-align: center;
   padding: 15px;
   margin-bottom: 24px;
   font-weight: 600;
@@ -1283,7 +1283,7 @@ section {
 }
 
 .book-a-table .php-email-form button[type=submit]:hover {
-  background: #ec2727;
+  background: #059652;
 }
 
 @keyframes animate-loading {
@@ -1401,8 +1401,8 @@ section {
 .contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #df1529;
-  text-align: left;
+  background: #059652;
+  text-align: center;
   padding: 15px;
   font-weight: 600;
 }

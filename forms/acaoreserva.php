@@ -86,6 +86,6 @@ if ($listar === false) {
     exit();
 }
 
-echo 'Reserva feita com sucesso.';
+echo 'Pedido de reserva efetuado com sucesso! Aguarde um e-mail ou uma ligação de confirmação.';
 
 ?>
