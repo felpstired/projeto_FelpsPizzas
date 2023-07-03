@@ -9,8 +9,8 @@ $listar = listarRegistros('idmenucardapio, menucardapio', 'tbmenucardapio', 'A')
   <div class="container" data-aos="fade-up">
 
     <div class="section-header">
-      <h2>Our Menu</h2>
-      <p>Aprecie nosso <span>Delicioso Cardapio</span></p>
+      <h2>cardápio</h2>
+      <p>Aprecie nosso <span>Delicioso Cardápio</span></p>
     </div>
 
     <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -96,7 +96,6 @@ $listar = listarRegistros('idmenucardapio, menucardapio', 'tbmenucardapio', 'A')
                       <?php echo $descimg; ?>
                     </p>
                     <p class="price">
-                      $
                       <?php echo $preco; ?>
                     </p>
                   </div><!-- Menu Item -->

@@ -9,7 +9,7 @@ $listar = listarRegistrosJoin('tbpessoas.nome, tbavaliacoes.comentario, tbavalia
   <div class="container" data-aos="fade-up">
 
     <div class="section-header">
-      <h2>Testimonials</h2>
+      <h2>Avaliações</h2>
       <p>O que estão <span>Falando sobre nós</span></p>
     </div>
 

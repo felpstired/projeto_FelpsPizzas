@@ -18,8 +18,8 @@ if ($listar === false) {
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Contact</h2>
-          <p>Need Help? <span>Contact Us</span></p>
+          <h2>Contato</h2>
+          <p>Precisa de Ajuda? <span>Entre em Contato</span></p>
         </div>
 
         <div class="mb-3">
@@ -62,20 +62,20 @@ if ($listar === false) {
 
         </div>
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+        <form action="forms/contato.php" method="post" role="form" class="php-email-form p-3 p-md-4">
           <div class="row">
             <div class="col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
+              <input type="text" name="nome" class="form-control" id="name" placeholder="Seu Nome" required>
             </div>
             <div class="col-xl-6 form-group">
               <input type="email" class="form-control" name="email" id="email" placeholder="Seu Email" required>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
+            <input type="text" class="form-control" name="assunto" id="subject" placeholder="Assunto" required>
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
+            <textarea class="form-control" name="mensagem" rows="5" placeholder="Mensagem" required></textarea>
           </div>
           <div class="my-3">
             <div class="loading">Carregando</div>

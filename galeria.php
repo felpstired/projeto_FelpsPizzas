@@ -10,7 +10,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>gallery</h2>
+          <h2>Galeria
+          </h2>
           <p>Observe <span>Nossa Galeria</span></p>
         </div>
 

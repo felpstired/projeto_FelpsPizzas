@@ -58,7 +58,7 @@ if ($listar === false) {
             <div class="validate"></div>
           </div>
           <div class="mb-3">
-            <div class="loading">Carregando</div>
+            <div class="loading">Carregando...</div>
             <div class="error-message"></div>
             <div class="sent-message">Seu pedido de reserva foi enviado. Nós ligaremos ou enviaremos um e-mail confirmando sua reserva. Obrigado!</div>
           </div>

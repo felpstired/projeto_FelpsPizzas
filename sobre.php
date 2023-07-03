@@ -26,7 +26,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <!-- <h2>About Us</h2> -->
+          <h2>Sobre</h2>
           <p>Saiba mais <span>Sobre Nós</span></p>
         </div>
 
