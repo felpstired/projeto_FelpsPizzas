@@ -62,7 +62,7 @@ if ($listar === false) {
 
         </div>
 
-        <form action="forms/contato.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+        <form action="forms/contato.php" method="post" role="form" class="formphp p-3 p-md-4">
           <div class="row">
             <div class="col-xl-6 form-group">
               <input type="text" name="nome" class="form-control" id="name" placeholder="Seu Nome" required>

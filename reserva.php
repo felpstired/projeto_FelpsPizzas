@@ -26,7 +26,7 @@ if ($listar === false) {
       <div class="col-lg-4 reservation-img" style="background-image: url(<?php echo $imagem; ?>);" data-aos="zoom-out" data-aos-delay="200"></div>
 
       <div class="col-lg-8 d-flex align-items-center reservation-form-bg">
-        <form action="forms/acaoreserva.php" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+        <form action="forms/acaoreserva.php" method="post" role="form" class="formphp" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
               <input type="text" name="nome" class="form-control" id="name" placeholder="Seu Nome" data-rule="minlen:4" data-msg="Favor inserir pelo menos 4 caracteres">
@@ -58,9 +58,10 @@ if ($listar === false) {
             <div class="validate"></div>
           </div>
           <div class="mb-3">
-            <div class="loading">Carregando...</div>
+            <div class="msgform"></div>
+            <!-- <div class="loading">Carregando...</div>
             <div class="error-message"></div>
-            <div class="sent-message">Seu pedido de reserva foi enviado. Nós ligaremos ou enviaremos um e-mail confirmando sua reserva. Obrigado!</div>
+            <div class="sent-message">Seu pedido de reserva foi enviado. Nós ligaremos ou enviaremos um e-mail confirmando sua reserva. Obrigado!</div> -->
           </div>
           <div class="text-center"><button type="submit">Reservar uma mesa</button></div>
         </form>

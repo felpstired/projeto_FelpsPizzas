@@ -1182,24 +1182,24 @@ section {
   background: rgba(55, 55, 63, 0.04);
 }
 
-.book-a-table .php-email-form {
+.book-a-table .formphp {
   padding: 40px;
 }
 
 @media (max-width: 575px) {
-  .book-a-table .php-email-form {
+  .book-a-table .formphp {
     padding: 20px;
   }
 }
 
-.book-a-table .php-email-form h3 {
+.book-a-table .formphp h3 {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.book-a-table .php-email-form h4 {
+.book-a-table .formphp h4 {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1207,12 +1207,12 @@ section {
   margin: 20px 0 0 0;
 }
 
-.book-a-table .php-email-form p {
+.book-a-table .formphp p {
   font-size: 14px;
   margin-bottom: 20px;
 }
 
-.book-a-table .php-email-form .error-message {
+.book-a-table .formphp .error-message {
   display: none;
   color: #fff;
   background: #059652;
@@ -1222,7 +1222,7 @@ section {
   font-weight: 600;
 }
 
-.book-a-table .php-email-form .sent-message {
+.book-a-table .formphp .sent-message {
   display: none;
   color: #fff;
   background: #059652;
@@ -1232,7 +1232,7 @@ section {
   font-weight: 600;
 }
 
-.book-a-table .php-email-form .loading {
+.book-a-table .formphp .loading {
   display: none;
   background: #fff;
   text-align: center;
@@ -1240,7 +1240,7 @@ section {
   margin-bottom: 24px;
 }
 
-.book-a-table .php-email-form .loading:before {
+.book-a-table .formphp .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1252,28 +1252,28 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-.book-a-table .php-email-form input,
-.book-a-table .php-email-form textarea {
+.book-a-table .formphp input,
+.book-a-table .formphp textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
   border-radius: 0;
 }
 
-.book-a-table .php-email-form input:focus,
-.book-a-table .php-email-form textarea:focus {
+.book-a-table .formphp input:focus,
+.book-a-table .formphp textarea:focus {
   border-color: var(--color-primary);
 }
 
-.book-a-table .php-email-form input {
+.book-a-table .formphp input {
   padding: 12px 15px;
 }
 
-.book-a-table .php-email-form textarea {
+.book-a-table .formphp textarea {
   padding: 12px 15px;
 }
 
-.book-a-table .php-email-form button[type=submit] {
+.book-a-table .formphp button[type=submit] {
   background: var(--color-primary);
   border: 0;
   padding: 14px 60px;
@@ -1282,7 +1282,7 @@ section {
   border-radius: 50px;
 }
 
-.book-a-table .php-email-form button[type=submit]:hover {
+.book-a-table .formphp button[type=submit]:hover {
   background: #059652;
 }
 
@@ -1387,18 +1387,18 @@ section {
   color: var(--color-primary);
 }
 
-.contact .php-email-form {
+.contact .formphp {
   width: 100%;
   margin-top: 30px;
   background: #fff;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
 }
 
-.contact .php-email-form .form-group {
+.contact .formphp .form-group {
   padding-bottom: 20px;
 }
 
-.contact .php-email-form .error-message {
+.contact .formphp .error-message {
   display: none;
   color: #fff;
   background: #059652;
@@ -1407,11 +1407,11 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .formphp .error-message br+br {
   margin-top: 25px;
 }
 
-.contact .php-email-form .sent-message {
+.contact .formphp .sent-message {
   display: none;
   color: #fff;
   background: #059652;
@@ -1420,14 +1420,14 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+.contact .formphp .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
 }
 
-.contact .php-email-form .loading:before {
+.contact .formphp .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -1439,27 +1439,27 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+.contact .formphp input,
+.contact .formphp textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
+.contact .formphp input:focus,
+.contact .formphp textarea:focus {
   border-color: var(--color-primary);
 }
 
-.contact .php-email-form input {
+.contact .formphp input {
   height: 48px;
 }
 
-.contact .php-email-form textarea {
+.contact .formphp textarea {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .formphp button[type=submit] {
   background: var(--color-primary);
   border: 0;
   padding: 12px 40px;
@@ -1468,7 +1468,7 @@ section {
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .formphp button[type=submit]:hover {
   background: #ec2727;
 }
 

@@ -37,8 +37,9 @@ if ($servidorLocal) {
     define('PASS', '');
     define('DBNAME', 'dbpizzaria');
 } else {
-    define('HOST', 'localhost');
-    define('USER', 'nomeUsuarioServidor');
-    define('PASS', 'SenhaBdServidor');
-    define('DBNAME', 'dbpizzaria');
+    define('HOST', '15.235.55.95');
+    define('USER', 'felpspizzasdb');
+    define('PASS', '~G6fs89s9');
+    define('DBNAME', 'dbfelpspizza');
+    define('URL', 'https://www.tiredartist.com.br/');
 }
