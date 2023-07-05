@@ -1273,7 +1273,7 @@ section {
   padding: 12px 15px;
 }
 
-.book-a-table .formphp button[type=submit] {
+.book-a-table .formphp button[type="submit"] {
   background: var(--color-primary);
   border: 0;
   padding: 14px 60px;
@@ -1282,7 +1282,7 @@ section {
   border-radius: 50px;
 }
 
-.book-a-table .formphp button[type=submit]:hover {
+.book-a-table .formphp button[type="submit"]:hover {
   background: #059652;
 }
 
