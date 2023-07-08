@@ -40,11 +40,11 @@ if (isset($_POST['mensagem']) && !empty($_POST['mensagem'])) {
 
 $registrarMensagem = inserirRegistros('tbcontmsg', 'nome, email, assunto, mensagem, cadastro', "'$nome','$email','$assunto','$mensagem'");
 if ($registrarMensagem === false) {
-    echo 'Não foi possível enviar a sua mensagem.';
+    echo 'Não foi possível enviar a sua mensagem. ';
     echo 'Por favor, tente novamente.';
     exit();
 }
 
-echo 'Sua mensagem foi enviada. Obrigado!';
+echo 'OK';
 
 ?>

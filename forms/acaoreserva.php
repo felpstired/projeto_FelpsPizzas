@@ -69,19 +69,19 @@ if ($listar === false) {
     $idpessoa = inserirRegistrosReturnId('tbpessoas', 'nome, email, telefone, cadastro', "'$nome','$email','$telefone'");
     // var_dump($idpessoa);
     if ($idpessoa === false) {
-        echo 'Não foi possível registrar seus dados.';
+        echo 'Não foi possível registrar seus dados. ';
         echo 'Tente novamente.';
         exit();
     } else {
         $registrarReserva = inserirRegistros('tbreservas', 'idpessoas, datar, horario, qtddpessoas, comentario, cadastro', "'$idpessoa','$date','$horario','$pessoas','$mensagem'");
         if ($registrarReserva === false) {
-            echo 'Não foi possível realizar a reserva.';
+            echo 'Não foi possível realizar a reserva. ';
             echo 'Por favor, tente novamente.';
             exit();
         }
     }    
 } else {    
-    echo 'Já existe uma conta com esse e-mail cadastrado no nosso site.';
+    echo 'Já existe uma conta com esse e-mail cadastrado no nosso site. ';
     echo 'Tente novamente com outros dados.';
     exit();
 }

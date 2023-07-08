@@ -62,7 +62,7 @@ if ($listar === false) {
 
         </div>
 
-        <form action="forms/contato.php" method="post" role="form" class="formphp p-3 p-md-4">
+        <form action="forms/acaocontato.php" method="post" role="form" class="formphp php-email-form p-3 p-md-4">
           <div class="row">
             <div class="col-xl-6 form-group">
               <input type="text" name="nome" class="form-control" id="name" placeholder="Seu Nome" required>
@@ -78,9 +78,9 @@ if ($listar === false) {
             <textarea class="form-control" name="mensagem" rows="5" placeholder="Mensagem" required></textarea>
           </div>
           <div class="my-3">
-            <div class="loading">Carregando</div>
+            <div class="loading">Carregando...</div>
             <div class="error-message"></div>
-            <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
+            <div class="sent-message">Sua mensagem foi enviada com sucesso! Aguarde uma resposta em seu e-mail. Obrigado!</div>
           </div>
           <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
         </form><!--End Contact Form -->

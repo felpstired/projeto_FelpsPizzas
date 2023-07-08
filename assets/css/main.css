@@ -1212,17 +1212,17 @@ section {
   margin-bottom: 20px;
 }
 
-.book-a-table .formphp .error-message {
+.book-a-table .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #059652;
-  text-align: center;
+  background: #df1529;
+  text-align: left;
   padding: 15px;
   margin-bottom: 24px;
   font-weight: 600;
 }
 
-.book-a-table .formphp .sent-message {
+.book-a-table .php-email-form .sent-message {
   display: none;
   color: #fff;
   background: #059652;
@@ -1398,20 +1398,20 @@ section {
   padding-bottom: 20px;
 }
 
-.contact .formphp .error-message {
+.contact .php-email-form .error-message {
   display: none;
   color: #fff;
-  background: #059652;
-  text-align: center;
+  background: #df1529;
+  text-align: left;
   padding: 15px;
   font-weight: 600;
 }
 
-.contact .formphp .error-message br+br {
+.contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
-.contact .formphp .sent-message {
+.contact .php-email-form .sent-message {
   display: none;
   color: #fff;
   background: #059652;
