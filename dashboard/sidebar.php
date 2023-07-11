@@ -31,19 +31,9 @@
 
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Dashboard
-            </p>
-          </a>
-        </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
+            <i class="nav-icon fas fa-users"></i>
             <p>
               Equipe
               <i class="fas fa-angle-left right"></i>
@@ -52,25 +42,25 @@
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="listarPessoa">
-                <i class="far fa-circle nav-icon"></i>
+              <i class="fa-user nav-icon fas"></i>
                 <p>Listar Pessoas</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoPessoa">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Pessoas</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="listarFuncionario">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-id-card nav-icon"></i>
                 <p>Listar Funcionarios</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoFuncionario">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Funcionários</p>
               </a>
             </li>
@@ -78,7 +68,134 @@
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-copy"></i>
+            <i class="nav-icon fas fa-clipboard"></i>
+            <p>
+              Cardapio
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="listarMenu">
+                <i class="fas fa-pizza-slice nav-icon"></i>
+                <p>Listar Categorias</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoMenu">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Categorias</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="listarCardapio">
+                <i class="fas fa-drumstick-bite nav-icon"></i>
+                <p>Listar Cardápios</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoCardapio">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Cardápios</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-film"></i>
+            <p>
+              Banner
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="listarBanner">
+                <i class="fas fa-object-group nav-icon"></i>
+                <p>Listar Banners</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoBanner">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Banners</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-clipboard-list"></i>
+            <p>
+              Card
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="listarCard">
+                <i class="fas fa-clipboard-check nav-icon"></i>
+                <p>Listar Cards</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoCard">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Cards</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-question"></i>
+            <p>
+              Sobre
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="listarSobre">
+                <i class="fas fa-info nav-icon"></i>
+                <p>Listar Sobre</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoMenu">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Sobre</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-images"></i>
+            <p>
+              Galeria
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="listarGaleria">
+                <i class="fas fa-image nav-icon"></i>
+                <p>Listar Imagens</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoGaleria">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Imagens</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-calendar"></i>
             <p>
               Eventos
               <i class="fas fa-angle-left right"></i>
@@ -87,8 +204,61 @@
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="listarEvento">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-wine-glass nav-icon"></i>
                 <p>Listar Eventos</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoEvento">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Eventos</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-address-book"></i>
+            <p>
+              Contatos
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="listarMensagem">
+                <i class="fas fa-envelope nav-icon"></i>
+                <p>Listar Mensagens</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoMensagem">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Mensagens</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="listarInfo">
+                <i class="fas fa-info nav-icon"></i>
+                <p>Listar Info de Contato</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoInfo">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Info</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="listarMapa">
+                <i class="fas fa-map nav-icon"></i>
+                <p>Listar Mapa de Contato</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-menu="novoMapa">
+                <i class="fas fa-plus nav-icon"></i>
+                <p>Cadastrar Mapa</p>
               </a>
             </li>
           </ul>

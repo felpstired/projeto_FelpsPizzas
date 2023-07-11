@@ -10,6 +10,14 @@
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+  <?php 
+  
+  include_once './config/conexao.php';
+  include_once './config/constantes.php';
+  include_once './func/functions.php';
+  
+  ?>
 </head>
 
 <body class="hold-transition sidebar-mini">
