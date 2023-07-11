@@ -31,10 +31,9 @@
 
       <div class="content">
         <div class="container-fluid">
+          <div class="text-center" id="loading"></div>
           <div class="conteudo" id="conteudo">
           </div>
-          <input type="text" id="conteudo">
-            <input type="text" id="conteudo2">
         </div>
       </div>
 
