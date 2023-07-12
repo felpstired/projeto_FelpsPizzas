@@ -1,6 +1,6 @@
 <?php 
 
-$listar = listarRegistros('idpessoas, nome, email, telefone, cpf','tbpessoas','A');
+$listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo','tbpessoas','A');
 
 ?>
 
@@ -17,7 +17,8 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf','tbpessoas','A
                     <th scope="col" width="25%">Email</th>
                     <th scope="col" width="12%">Telefone</th>
                     <th scope="col" width="12%">CPF</th>
-                    <th scope="col" width="20%">Ações</th>
+                    <th scope="col" width="1%">Ativo</th>
+                    <th scope="col" width="19%">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,7 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf','tbpessoas','A
                     $email = $itemLista->email;
                     $telefone = $itemLista->telefone;
                     $cpf = $itemLista->cpf;
+                    $ativo = $itemLista->ativo;
                 
                 
                 ?>
@@ -38,6 +40,7 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf','tbpessoas','A
                     <td><?php echo $email; ?></td>
                     <td><?php echo $telefone; ?></td>
                     <td><?php echo $cpf; ?></td>
+                    <td><?php echo $ativo; ?></td>
                     <td>
                             <button type="button" class="btn btn-sm btn-success">Ativar</button>
                             <button type="button" class="btn btn-sm btn-secondary">Alterar</button>

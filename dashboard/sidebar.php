@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
   <a href="index.php" class="brand-link">
-    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <img src="./assets/img/logo.png" alt="Felps Pizza's Logo" class="brand-image elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">Felps Pizza's</span>
   </a>
 

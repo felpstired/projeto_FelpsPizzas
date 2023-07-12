@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     alert('Bem-Vindo(a) ao Painel!');
 
     $('.linkMenu').click(function (pagelink) {
@@ -10,6 +11,7 @@ $(document).ready(function () {
         var dados = {
             acao: menuClicado,
         };
+
         $.ajax({
             type: "POST",
             dataType: 'html',
@@ -23,8 +25,9 @@ $(document).ready(function () {
                 loadingend();
             }
         });
-    });
 
+    });
+    
 });
 
 function loading() {
