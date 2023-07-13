@@ -8,6 +8,9 @@ $(document).ready(function () {
         // $('div#conteudo').html('Você clicou na sessão ' + menuClicado);
         // var teste = $('input#conteudo2').val();
         // $('input#conteudo').val(teste);
+
+        console.log(menuClicado);
+        
         var dados = {
             acao: menuClicado,
         };
@@ -27,6 +30,12 @@ $(document).ready(function () {
         });
 
     });
+
+    // $("button#btnTeste").click(function() {
+    //     $("#inputTeste").toggle().animate();
+    //     $(this).toggleClass('d-none d-block');
+    // });
+
     
 });
 

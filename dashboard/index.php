@@ -44,6 +44,10 @@
           <div class="text-center" id="loading"></div>
           <div class="conteudo" id="conteudo">
           </div>
+          <div id="teste">
+            <button id="btnTeste">Teste</button>
+            <input type="text" class="d-none" id="inputTeste">
+          </div>
         </div>
       </div>
 

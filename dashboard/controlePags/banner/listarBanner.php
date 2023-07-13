@@ -6,19 +6,19 @@ $listar = listarRegistros('idbanner, imagem, titulo, descricao, video, ativo','t
 
 <div class="card">
     <div class="card-header text-center">
-        <h3 class="text-danger font-weight-bold">Listar Pessoas</h3>
+        <h3 class="text-danger font-weight-bold">Listar Banners</h3>
     </div>
     <div class="card-body">
         <table class="table table-striped">
             <thead class="bg-danger">
                 <tr>
-                    <th scope="col" width="1%">#</th>
-                    <th scope="col" width="5%">Imagem</th>
-                    <th scope="col" width="15%">Titulo</th>
-                    <th scope="col" width="20%">Descrição</th>
-                    <th scope="col" width="20%">Video</th>
-                    <th scope="col" width="1%">Ativo</th>
-                    <th scope="col" width="18%">Ações</th>
+                    <th scope="col" width="1%" class="text-center">#</th>
+                    <th scope="col" width="5%" class="text-center">Imagem</th>
+                    <th scope="col" width="15%" class="text-center">Titulo</th>
+                    <th scope="col" width="20%" class="text-center">Descrição</th>
+                    <th scope="col" width="20%" class="text-center">Video</th>
+                    <th scope="col" width="1%" class="text-center">Ativo</th>
+                    <th scope="col" width="18%" class="text-center">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,13 +35,13 @@ $listar = listarRegistros('idbanner, imagem, titulo, descricao, video, ativo','t
                 
                 ?>
                 <tr>
-                    <th scope="row"><?php echo $id; ?></th>
-                    <td><img src="<?php echo $imagem; ?>" class="img-fluid rounded mx-auto d-block img-thumbnail" alt=""></td>
-                    <td><?php echo $titulo; ?></td>
+                    <th scope="row" class="text-center"><?php echo $id; ?></th>
+                    <td class="text-center"><img src="<?php echo $imagem; ?>" class="img-fluid rounded mx-auto d-block img-thumbnail" alt=""></td>
+                    <td class="text-center"><?php echo $titulo; ?></td>
                     <td><?php echo $descricao; ?></td>
-                    <td><a href="<?php echo $video; ?>" class="text-danger" target="_blank"><?php echo $video; ?></a></td>
-                    <td><?php echo $ativo; ?></td>
-                    <td>
+                    <td class="text-center"><a href="<?php echo $video; ?>" class="text-danger" target="_blank"><?php echo $video; ?></a></td>
+                    <td class="text-center"><?php echo $ativo; ?></td>
+                    <td class="text-center">
                             <button type="button" class="btn btn-sm btn-success">Ativar</button>
                             <button type="button" class="btn btn-sm btn-secondary">Alterar</button>
                             <button type="button" class="btn btn-sm btn-danger">Excluir</button>

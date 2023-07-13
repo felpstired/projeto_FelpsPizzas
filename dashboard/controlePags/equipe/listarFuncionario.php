@@ -12,10 +12,10 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
         <table class="table table-striped">
             <thead class="bg-danger">
                 <tr>
-                    <th scope="col" width="1%">#</th>
-                    <th scope="col" width="25%">Nome</th>
-                    <th scope="col" width="25%">Cargo</th>
-                    <th scope="col" width="20%">Ações</th>
+                    <th scope="col" width="1%" class="text-center">#</th>
+                    <th scope="col" width="25%" class="text-center">Nome</th>
+                    <th scope="col" width="25%" class="text-center">Cargo</th>
+                    <th scope="col" width="20%" class="text-center">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,10 +28,10 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
                 
                 ?>
                 <tr>
-                    <th scope="row"><?php echo $id; ?></th>
-                    <td><?php echo $nome; ?></td>
-                    <td><?php echo $cargo; ?></td>
-                    <td>
+                    <th scope="row" class="text-center"><?php echo $id; ?></th>
+                    <td class="text-center"><?php echo $nome; ?></td>
+                    <td class="text-center"><?php echo $cargo; ?></td>
+                    <td class="text-center">
                             <button type="button" class="btn btn-sm btn-success">Ativar</button>
                             <button type="button" class="btn btn-sm btn-secondary">Alterar</button>
                             <button type="button" class="btn btn-sm btn-danger">Excluir</button>
