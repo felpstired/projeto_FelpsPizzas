@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    alert('Bem-Vindo(a) ao Painel!');
-
     $('.linkMenu').click(function (pagelink) {
         pagelink.preventDefault();
         var menuClicado = $(this).attr('data-menu');
@@ -31,12 +29,12 @@ $(document).ready(function () {
 
     });
 
-    // $("button#btnTeste").click(function() {
-    //     $("#inputTeste").toggle().animate();
-    //     $(this).toggleClass('d-none d-block');
-    // });
+    $("button#btnTeste").click(function() {
+        alert('Teste');
+        $("input#inputTeste").toggle().animate();
+        $("input#inputTeste").toggleClass('d-none d-block');
+    });
 
-    
 });
 
 function loading() {
@@ -47,6 +45,36 @@ function loadingend() {
     $('div#loading').html("");
 
 }
+
+function cadCard() {
+
+    $('#formCadCard').on('submit', function (cad) {
+        cad.preventDefault();
+
+        alert('CLICOU');
+
+        var dadosForm = $(this).serializeArray();
+
+        dadosForm.push (
+            {name: 'acao', value: 'addCard'},
+        );
+
+        $.ajax({
+            type: "POST",
+            dataType: 'html',
+            // url: menuClicado + '.php',
+            url: 'controle.php',
+            data: dadosForm,
+            beforeSend: function () {
+                loading();
+            }, success : function (retorno) {
+                $('div#conteudo').html(retorno);
+                loadingend();
+            }
+        });
+
+    });
+};
 
 // setTimeout(function () {
 //     $('div#loading').html("");

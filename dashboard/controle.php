@@ -29,6 +29,9 @@ switch ($acao) {
     case 'listarCard':
         include_once './controlePags/card/listarCard.php';
         break;
+    case 'addCard':
+        include_once './controlePags/card/addCard.php';
+        break;
     case 'listarSobre':
         include_once './controlePags/sobre/listarSobre.php';
         break;
@@ -50,3 +53,5 @@ switch ($acao) {
 }
 
 ?>
+
+<script src="js/painel.js"></script>

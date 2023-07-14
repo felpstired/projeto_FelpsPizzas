@@ -46,24 +46,24 @@
                 <p>Listar Pessoas</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoPessoa">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Pessoas</p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="listarFuncionario">
                 <i class="fas fa-id-card nav-icon"></i>
                 <p>Listar Funcionarios</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoFuncionario">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Funcionários</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
         <li class="nav-item">
@@ -81,24 +81,24 @@
                 <p>Listar Categorias</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoMenu">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Categorias</p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="listarCardapio">
                 <i class="fas fa-drumstick-bite nav-icon"></i>
                 <p>Listar Cardápios</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoCardapio">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Cardápios</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
         <li class="nav-item">
@@ -116,12 +116,12 @@
                 <p>Listar Banners</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoBanner">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Banners</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
         <li class="nav-item">
@@ -139,12 +139,12 @@
                 <p>Listar Cards</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link linkMenu" data-menu="novoCard">
+            <!-- <li class="nav-item">
+              <a href="#" class="nav-link linkMenu" data-target="#modalAddCard" data-menu="novoCard">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Cards</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
         <li class="nav-item">
@@ -162,12 +162,12 @@
                 <p>Listar Sobre</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoMenu">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Sobre</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
         <li class="nav-item">
@@ -185,12 +185,12 @@
                 <p>Listar Imagens</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoGaleria">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Imagens</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
         <li class="nav-item">
@@ -208,12 +208,12 @@
                 <p>Listar Eventos</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoEvento">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Eventos</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
         <li class="nav-item">
@@ -231,36 +231,36 @@
                 <p>Listar Mensagens</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoMensagem">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Mensagens</p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="listarInfo">
                 <i class="fas fa-info nav-icon"></i>
                 <p>Listar Info de Contato</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoInfo">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Info</p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="listarMapa">
                 <i class="fas fa-map nav-icon"></i>
                 <p>Listar Mapa de Contato</p>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link linkMenu" data-menu="novoMapa">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Cadastrar Mapa</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </li>
       </ul>
