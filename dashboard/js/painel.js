@@ -1,11 +1,12 @@
 $(document).ready(function () {
 
+    $('input#telefone').mask('(00) 0 0000-0000');
+    $('input#cpf').mask('000.000.000-00', {reverse: true});
+
     $('.linkMenu').click(function (pagelink) {
         pagelink.preventDefault();
+
         var menuClicado = $(this).attr('data-menu');
-        // $('div#conteudo').html('Você clicou na sessão ' + menuClicado);
-        // var teste = $('input#conteudo2').val();
-        // $('input#conteudo').val(teste);
 
         console.log(menuClicado);
         
@@ -16,7 +17,6 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             dataType: 'html',
-            // url: menuClicado + '.php',
             url: 'controle.php',
             data: dados,
             beforeSend: function () {
@@ -48,7 +48,7 @@ function loadingend() {
 
 function cadCard() {
 
-    $('#formCadCard').on('submit', function (cad) {
+    $('#formCadCard').submit(function (cad) {
         cad.preventDefault();
 
         alert('CLICOU');
@@ -62,7 +62,6 @@ function cadCard() {
         $.ajax({
             type: "POST",
             dataType: 'html',
-            // url: menuClicado + '.php',
             url: 'controle.php',
             data: dadosForm,
             beforeSend: function () {
@@ -74,6 +73,82 @@ function cadCard() {
         });
 
     });
+};
+
+function cadPessoa() {
+
+    $('#formCadPessoa').submit(function (cad) {
+        cad.preventDefault();
+
+        // alert('CLICOU');
+
+        var dadosForm = $(this).serializeArray();
+
+        dadosForm.push (
+            {name: 'acao', value: 'addPessoa'},
+        );
+
+        $.ajax({
+            type: "POST",
+            dataType: 'html',
+            url: 'controle.php',
+            data: dadosForm,
+            beforeSend: function () {
+                loading();
+            }, success : function (retorno) {
+                alert(retorno);
+                loadingend();
+                if (retorno == 'OK') {
+                    $("div.resultSuccess").toggle().animate();
+                    $("div.resultSuccess").toggleClass('d-none d-block');
+                } else {
+                    $("div.resultError").toggle().animate();
+                    $("div.resultError").toggleClass('d-none d-block');
+                    $("div.resultError").html('Erro: ' + retorno);
+                }
+            }
+        });
+
+    });
+
+};
+
+function cadFunci() {
+
+    $('#formCadPessoa').submit(function (cad) {
+        cad.preventDefault();
+
+        // alert('CLICOU');
+
+        var dadosForm = $(this).serializeArray();
+
+        dadosForm.push (
+            {name: 'acao', value: 'addPessoa'},
+        );
+
+        $.ajax({
+            type: "POST",
+            dataType: 'html',
+            url: 'controle.php',
+            data: dadosForm,
+            beforeSend: function () {
+                loading();
+            }, success : function (retorno) {
+                alert(retorno);
+                loadingend();
+                if (retorno == 'OK') {
+                    $("div.resultSuccess").toggle().animate();
+                    $("div.resultSuccess").toggleClass('d-none d-block');
+                } else {
+                    $("div.resultError").toggle().animate();
+                    $("div.resultError").toggleClass('d-none d-block');
+                    $("div.resultError").html('Erro: ' + retorno);
+                }
+            }
+        });
+
+    });
+
 };
 
 // setTimeout(function () {

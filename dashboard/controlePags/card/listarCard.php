@@ -99,18 +99,18 @@ $listar = listarRegistros('idcard, icon, titulo, descricao, ativo', 'tbcard', 'A
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Icon</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Ex.: bi bi-copy" name="icon">
+                            <input type="text" class="form-control" id="icon" placeholder="bi bi-copy" name="icon">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPassword4">Titulo</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Titulo" name="titulo" required>
+                            <label for="inputPassword4">Titulo <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Titulo" name="titulo" required>
                         </div>
 
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Descrição</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc" required></textarea>
+                        <label for="exampleFormControlTextarea1">Descrição <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreva uma descrição..." name="desc" required></textarea>
                     </div>
                     
                     <div class="modal-footer">

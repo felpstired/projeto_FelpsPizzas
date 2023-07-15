@@ -14,8 +14,14 @@ switch ($acao) {
     case 'listarPessoa':
         include_once './controlePags/equipe/listarPessoa.php';
         break;
+    case 'addPessoa':
+        include_once './controlePags/equipe/addPessoa.php';
+        break;
     case 'listarFuncionario':
         include_once './controlePags/equipe/listarFuncionario.php';
+        break;
+    case 'addFunci':
+        include_once './controlePags/equipe/addFuncionario.php';
         break;
     case 'listarMenu':
         include_once './controlePags/cardapio/listarMenu.php';
