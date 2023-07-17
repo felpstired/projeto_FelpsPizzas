@@ -112,11 +112,11 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
 
                         <div class="form-group col-md-6">
                             <label for="telefone">Telefone <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="telefone" placeholder="(11) 9 1111-1111" name="telefone" required>
+                            <input type="text" class="form-control" id="telefone" placeholder="(11) 9 1111-1111" name="telefone" minlength="11" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="cpf">CPF</label>
-                            <input type="text" class="form-control" id="cpf" placeholder="111.111.111-11" name="cpf">
+                            <input type="text" class="form-control" id="cpf" placeholder="111.111.111-11" name="cpf" minlength="11">
                         </div>
 
                     </div>
@@ -126,6 +126,7 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
                         <button type="submit" class="btn btn-success" onclick="cadPessoa();">Cadastrar</button>
                     </div>
 
+                    <div class="loadingf text-center p-3"></div>
                     <div class="resultError bg-danger text-left d-none p-3"></div>
                     <div class="resultSuccess bg-success text-center d-none p-3">Cadastro efetuado com sucesso!</div>
 

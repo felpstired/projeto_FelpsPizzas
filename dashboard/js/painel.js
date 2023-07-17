@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $('input#telefone').mask('(00) 0 0000-0000');
-    $('input#cpf').mask('000.000.000-00', {reverse: true});
+    $('input#cpf').mask('000.000.000-00', { reverse: true });
 
     $('.linkMenu').click(function (pagelink) {
         pagelink.preventDefault();
@@ -9,7 +9,7 @@ $(document).ready(function () {
         var menuClicado = $(this).attr('data-menu');
 
         console.log(menuClicado);
-        
+
         var dados = {
             acao: menuClicado,
         };
@@ -21,7 +21,7 @@ $(document).ready(function () {
             data: dados,
             beforeSend: function () {
                 loading();
-            }, success : function (retorno) {
+            }, success: function (retorno) {
                 $('div#conteudo').html(retorno);
                 loadingend();
             }
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     });
 
-    $("button#btnTeste").click(function() {
+    $("button#btnTeste").click(function () {
         alert('Teste');
         $("input#inputTeste").toggle().animate();
         $("input#inputTeste").toggleClass('d-none d-block');
@@ -43,6 +43,14 @@ function loading() {
 
 function loadingend() {
     $('div#loading').html("");
+}
+
+function loadingf() {
+    $('div.loadingf').html("<div class='spinner-border text-danger' role='status'></div><div>Carregando...</div>");
+}
+
+function loadingfend() {
+    $('div.loadingf').html("");
 
 }
 
@@ -55,8 +63,8 @@ function cadCard() {
 
         var dadosForm = $(this).serializeArray();
 
-        dadosForm.push (
-            {name: 'acao', value: 'addCard'},
+        dadosForm.push(
+            { name: 'acao', value: 'addCard' },
         );
 
         $.ajax({
@@ -66,7 +74,7 @@ function cadCard() {
             data: dadosForm,
             beforeSend: function () {
                 loading();
-            }, success : function (retorno) {
+            }, success: function (retorno) {
                 $('div#conteudo').html(retorno);
                 loadingend();
             }
@@ -82,10 +90,15 @@ function cadPessoa() {
 
         // alert('CLICOU');
 
-        var dadosForm = $(this).serializeArray();
+        let form = this;
 
-        dadosForm.push (
-            {name: 'acao', value: 'addPessoa'},
+        let dadosForm = $(this).serializeArray();
+
+        form.querySelector('.resultError').classList.remove('d-block');
+        form.querySelector('.resultSuccess').classList.remove('d-block');
+
+        dadosForm.push(
+            { name: 'acao', value: 'addPessoa' },
         );
 
         $.ajax({
@@ -94,17 +107,19 @@ function cadPessoa() {
             url: 'controle.php',
             data: dadosForm,
             beforeSend: function () {
-                loading();
-            }, success : function (retorno) {
-                alert(retorno);
-                loadingend();
+                loadingf();
+            }, success: function (retorno) {
+                // alert(retorno);
+                loadingfend();
                 if (retorno == 'OK') {
-                    $("div.resultSuccess").toggle().animate();
-                    $("div.resultSuccess").toggleClass('d-none d-block');
+                    form.querySelector('.resultSuccess').classList.remove('d-none');
+                    form.querySelector('.resultSuccess').classList.add('d-block');
+                    form.reset();
                 } else {
-                    $("div.resultError").toggle().animate();
-                    $("div.resultError").toggleClass('d-none d-block');
-                    $("div.resultError").html('Erro: ' + retorno);
+                    $(".resultError").html('Erro: ' + retorno);
+                    form.querySelector('.resultError').classList.remove('d-none');
+                    form.querySelector('.resultError').classList.add('d-block');
+                    form.reset();
                 }
             }
         });
@@ -122,8 +137,8 @@ function cadFunci() {
 
         var dadosForm = $(this).serializeArray();
 
-        dadosForm.push (
-            {name: 'acao', value: 'addPessoa'},
+        dadosForm.push(
+            { name: 'acao', value: 'addPessoa' },
         );
 
         $.ajax({
@@ -133,7 +148,7 @@ function cadFunci() {
             data: dadosForm,
             beforeSend: function () {
                 loading();
-            }, success : function (retorno) {
+            }, success: function (retorno) {
                 alert(retorno);
                 loadingend();
                 if (retorno == 'OK') {

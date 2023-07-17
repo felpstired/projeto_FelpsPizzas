@@ -1,6 +1,6 @@
 <?php
 
-$listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.cargo, tbpessoas.nome', 'tbfuncionarios', 'INNER', 'tbpessoas', 'idpessoas', 'A');
+$listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.cargo, tbfuncionarios.ativo, tbpessoas.nome', 'tbfuncionarios', 'INNER', 'tbpessoas', 'idpessoas', 'A');
 
 ?>
 
@@ -29,7 +29,8 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
                 foreach ($listar as $itemLista) {
                     $id = $itemLista->idfuncionarios;
                     $nome = $itemLista->nome;
-                    $cargo = $itemLista->cargo;
+                    $cargo = $itemLista->cargo;                    
+                    $ativo = $itemLista->ativo;
 
                 ?>
                     <tr>
@@ -96,8 +97,8 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
 
                     <div class="form-group">
                         <label for="pessoa">Pessoa <span class="text-danger">*</span></label>
-                        <select class="form-select" name="pessoa" id="pessoa" required>
-                            <option selected>Selecione um menu</option>
+                        <select class="form-control" name="pessoa" id="pessoa" required>
+                            <option selected>Selecione uma pessoa</option>
                             <?php
 
                             foreach ($listarP as $listarItemP) {
@@ -123,8 +124,8 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
                             <input type="text" class="form-control" id="cargo" placeholder="(11) 9 1111-1111" name="cargo" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="cpf">Admissão <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="cpf" placeholder="111.111.111-11" name="cpf">
+                            <label for="admissao">Admissão <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control datepicker" id="admissao" placeholder="111.111.111-11" name="admissao" maxlength="60" required>
                         </div>
 
                     </div>
