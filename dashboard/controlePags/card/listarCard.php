@@ -20,9 +20,9 @@ $listar = listarTudo('idcard, icon, titulo, descricao, ativo', 'tbcard');
                     <th scope="col" width="1%" class="text-center">#</th>
                     <th scope="col" width="2%" class="text-center">Icon</th>
                     <th scope="col" width="13%" class="text-center">Titulo</th>
-                    <th scope="col" width="33%" class="text-center">Descrição</th>
+                    <th scope="col" width="32%" class="text-center">Descrição</th>
                     <th scope="col" width="1%" class="text-center">Ativo</th>
-                    <th scope="col" width="10%" class="text-center">Ações</th>
+                    <th scope="col" width="11%" class="text-center">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,11 +81,11 @@ $listar = listarTudo('idcard, icon, titulo, descricao, ativo', 'tbcard');
     </div>
 </div>
 
-<div class="modal fade" id="modalAddCard" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalAddCard" tabindex="-1" role="dialog" aria-labelledby="modalAddCard" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Cadastro de Cards</h5>
+                <h5 class="modal-title" id="modalCardAdd">Cadastro de Cards</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -98,25 +98,29 @@ $listar = listarTudo('idcard, icon, titulo, descricao, ativo', 'tbcard');
                     <div class="form-row">
 
                         <div class="form-group col-md-6">
-                            <label for="inputEmail4">Icon</label>
+                            <label for="icon">Icon</label>
                             <input type="text" class="form-control" id="icon" placeholder="bi bi-copy" name="icon">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPassword4">Titulo <span class="text-danger">*</span></label>
+                            <label for="titulo">Titulo <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="titulo" placeholder="Titulo" name="titulo" required>
                         </div>
 
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Descrição <span class="text-danger">*</span></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreva uma descrição..." name="desc" required></textarea>
+                        <label for="desc">Descrição <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="desc" rows="3" name="desc" placeholder="Escreva uma descrição..." required></textarea>
                     </div>
                     
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                         <button type="submit" class="btn btn-success" onclick="cadCard('listarCard');">Cadastrar</button>
                     </div>
+
+                    <div class="loadingf text-center p-3"></div>
+                    <div class="resultError bg-danger text-left d-none p-3"></div>
+                    <div class="resultSuccess bg-success text-center d-none p-3">Cadastro efetuado com sucesso!</div>
 
                 </form>
 
