@@ -1,6 +1,6 @@
 <?php 
 
-$listar = listarRegistros('idgaleria, imagem, ativo','tbgaleria','A');
+$listar = listarTudo('idgaleria, imagem, ativo','tbgaleria');
 
 ?>
 
@@ -33,10 +33,32 @@ $listar = listarRegistros('idgaleria, imagem, ativo','tbgaleria','A');
                     <td class="text-center"><img src="<?php echo $imagem; ?>" class="img-fluid rounded mx-auto d-block img-thumbnail" alt=""></td>
                     <td class="text-center"><?php echo $ativo; ?></td>
                     <td class="text-center">
-                            <button type="button" class="btn btn-sm btn-success">Ativar</button>
+
+                            <?php
+                            if ($ativo == 'A') {
+                            ?>
+
+                                <button type="button" class="btn btn-sm btn-warning tbcard" data-id="<?php echo $id; ?>">Desativar</button>
+
+                            <?php
+                            } else if ($ativo == 'D') {
+                            ?>
+
+                                <button type="button" class="btn btn-sm btn-success tbcard" data-id="<?php echo $id; ?>">Ativar</button>
+
+                            <?php
+                            } else {
+                            ?>
+
+                                <button type="button" class="btn btn-sm btn-warning tbcard disabled" data-id="<?php echo $id; ?>">Erro</button>
+
+                            <?php
+                            }
+                            ?>
+
                             <button type="button" class="btn btn-sm btn-secondary">Alterar</button>
                             <button type="button" class="btn btn-sm btn-danger">Excluir</button>
-                    </td>
+                        </td>
                 </tr>
                 <?php 
                 

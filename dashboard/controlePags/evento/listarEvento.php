@@ -1,6 +1,6 @@
 <?php 
 
-$listar = listarRegistros('ideventos, titulo, preco, descricao, imagem, ativo','tbeventos','A');
+$listar = listarTudo('ideventos, titulo, preco, descricao, imagem, ativo','tbeventos');
 
 ?>
 
@@ -47,10 +47,32 @@ $listar = listarRegistros('ideventos, titulo, preco, descricao, imagem, ativo','
                     <td class="text-center">R$ <?php echo $preco; ?></td>
                     <td class="text-center"><?php echo $ativo; ?></td>
                     <td class="text-center">
-                            <button type="button" class="btn btn-sm btn-success">Ativar</button>
+
+                            <?php
+                            if ($ativo == 'A') {
+                            ?>
+
+                                <button type="button" class="btn btn-sm btn-warning tbcard" data-id="<?php echo $id; ?>">Desativar</button>
+
+                            <?php
+                            } else if ($ativo == 'D') {
+                            ?>
+
+                                <button type="button" class="btn btn-sm btn-success tbcard" data-id="<?php echo $id; ?>">Ativar</button>
+
+                            <?php
+                            } else {
+                            ?>
+
+                                <button type="button" class="btn btn-sm btn-warning tbcard disabled" data-id="<?php echo $id; ?>">Erro</button>
+
+                            <?php
+                            }
+                            ?>
+
                             <button type="button" class="btn btn-sm btn-secondary">Alterar</button>
                             <button type="button" class="btn btn-sm btn-danger">Excluir</button>
-                    </td>
+                        </td>
                 </tr>
                 <?php 
                 

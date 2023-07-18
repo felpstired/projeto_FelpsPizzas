@@ -60,4 +60,4 @@ switch ($acao) {
 
 ?>
 
-<script src="js/painel.js"></script>
+ <script src="js/painel.js"></script>

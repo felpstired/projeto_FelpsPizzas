@@ -1,6 +1,6 @@
 <?php
 
-$listar = listarRegistros('idcard, icon, titulo, descricao, ativo', 'tbcard', 'A');
+$listar = listarTudo('idcard, icon, titulo, descricao, ativo', 'tbcard');
 
 ?>
 
@@ -115,7 +115,7 @@ $listar = listarRegistros('idcard, icon, titulo, descricao, ativo', 'tbcard', 'A
                     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-success" onclick="cadCard();">Cadastrar</button>
+                        <button type="submit" class="btn btn-success" onclick="cadCard('listarCard');">Cadastrar</button>
                     </div>
 
                 </form>

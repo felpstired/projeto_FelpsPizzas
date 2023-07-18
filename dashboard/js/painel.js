@@ -1,14 +1,11 @@
 $(document).ready(function () {
 
-    $('input#telefone').mask('(00) 0 0000-0000');
-    $('input#cpf').mask('000.000.000-00', { reverse: true });
-
     $('.linkMenu').click(function (pagelink) {
         pagelink.preventDefault();
 
         var menuClicado = $(this).attr('data-menu');
 
-        console.log(menuClicado);
+        // console.log(menuClicado);
 
         var dados = {
             acao: menuClicado,
@@ -37,6 +34,9 @@ $(document).ready(function () {
 
 });
 
+$('input#telefone').mask('(00) 0 0000-0000');
+$('input#cpf').mask('000.000.000-00', {reverse: true});
+
 function loading() {
     $('div#loading').html("<div class='spinner-border text-danger' role='status'></div>");
 }
@@ -54,7 +54,7 @@ function loadingfend() {
 
 }
 
-function cadCard() {
+function cadCard(menuClicado) {
 
     $('#formCadCard').submit(function (cad) {
         cad.preventDefault();
@@ -64,7 +64,7 @@ function cadCard() {
         var dadosForm = $(this).serializeArray();
 
         dadosForm.push(
-            { name: 'acao', value: 'addCard' },
+            {name: 'acao', value: 'addCard'},
         );
 
         $.ajax({
@@ -73,17 +73,17 @@ function cadCard() {
             url: 'controle.php',
             data: dadosForm,
             beforeSend: function () {
-                loading();
+                // loading();
             }, success: function (retorno) {
-                $('div#conteudo').html(retorno);
-                loadingend();
+                attPage(menuClicado);
+                // loadingend();
             }
         });
 
     });
 };
 
-function cadPessoa() {
+function cadPessoa(menuClicado) {
 
     $('#formCadPessoa').submit(function (cad) {
         cad.preventDefault();
@@ -98,7 +98,7 @@ function cadPessoa() {
         form.querySelector('.resultSuccess').classList.remove('d-block');
 
         dadosForm.push(
-            { name: 'acao', value: 'addPessoa' },
+            {name: 'acao', value: 'addPessoa'},
         );
 
         $.ajax({
@@ -107,7 +107,7 @@ function cadPessoa() {
             url: 'controle.php',
             data: dadosForm,
             beforeSend: function () {
-                loadingf();
+                // loadingf();
             }, success: function (retorno) {
                 // alert(retorno);
                 loadingfend();
@@ -115,11 +115,17 @@ function cadPessoa() {
                     form.querySelector('.resultSuccess').classList.remove('d-none');
                     form.querySelector('.resultSuccess').classList.add('d-block');
                     form.reset();
+                    setTimeout(function () {
+                        attPage(menuClicado);
+                    }, 1000);
                 } else {
-                    $(".resultError").html('Erro: ' + retorno);
-                    form.querySelector('.resultError').classList.remove('d-none');
-                    form.querySelector('.resultError').classList.add('d-block');
-                    form.reset();
+                    // $(".resultError").html('Erro: ' + retorno);
+                    // form.querySelector('.resultError').classList.remove('d-none');
+                    // form.querySelector('.resultError').classList.add('d-block');
+                    // form.reset();
+                    // setTimeout(function () {
+                    //     attPage(menuClicado);
+                    // }, 1000);
                 }
             }
         });
@@ -138,7 +144,7 @@ function cadFunci() {
         var dadosForm = $(this).serializeArray();
 
         dadosForm.push(
-            { name: 'acao', value: 'addPessoa' },
+            {name: 'acao', value: 'addPessoa'},
         );
 
         $.ajax({
@@ -154,6 +160,9 @@ function cadFunci() {
                 if (retorno == 'OK') {
                     $("div.resultSuccess").toggle().animate();
                     $("div.resultSuccess").toggleClass('d-none d-block');
+                    setTimeout(function () {
+                        attPage();
+                    }, 6000);
                 } else {
                     $("div.resultError").toggle().animate();
                     $("div.resultError").toggleClass('d-none d-block');
@@ -165,6 +174,26 @@ function cadFunci() {
     });
 
 };
+
+function attPage(menuClicado) {
+
+    var dados = {
+        acao: menuClicado,
+    };
+
+    $.ajax({
+        type: "POST",
+        dataType: 'html',
+        url: 'controle.php',
+        data: dados,
+        beforeSend: function () {
+
+        }, success: function (retorno) {
+            $('#modalAddCard').modal('hide');
+            $('div#conteudo').html(retorno);
+        }
+    });
+}
 
 // setTimeout(function () {
 //     $('div#loading').html("");

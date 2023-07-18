@@ -123,7 +123,7 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-success" onclick="cadPessoa();">Cadastrar</button>
+                        <button type="submit" class="btn btn-success" onclick="cadPessoa('listarPessoa');">Cadastrar</button>
                     </div>
 
                     <div class="loadingf text-center p-3"></div>

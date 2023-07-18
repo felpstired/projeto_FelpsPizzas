@@ -1,6 +1,6 @@
 <?php 
 
-$listar = listarRegistros('idbanner, imagem, titulo, descricao, video, ativo','tbbanner','A');
+$listar = listarTudo('idbanner, imagem, titulo, descricao, video, ativo','tbbanner');
 
 ?>
 
@@ -42,10 +42,32 @@ $listar = listarRegistros('idbanner, imagem, titulo, descricao, video, ativo','t
                     <td class="text-center"><a href="<?php echo $video; ?>" class="text-danger" target="_blank"><?php echo $video; ?></a></td>
                     <td class="text-center"><?php echo $ativo; ?></td>
                     <td class="text-center">
-                            <button type="button" class="btn btn-sm btn-success">Ativar</button>
+
+                            <?php
+                            if ($ativo == 'A') {
+                            ?>
+
+                                <button type="button" class="btn btn-sm btn-warning tbcard" data-id="<?php echo $id; ?>">Desativar</button>
+
+                            <?php
+                            } else if ($ativo == 'D') {
+                            ?>
+
+                                <button type="button" class="btn btn-sm btn-success tbcard" data-id="<?php echo $id; ?>">Ativar</button>
+
+                            <?php
+                            } else {
+                            ?>
+
+                                <button type="button" class="btn btn-sm btn-warning tbcard disabled" data-id="<?php echo $id; ?>">Erro</button>
+
+                            <?php
+                            }
+                            ?>
+
                             <button type="button" class="btn btn-sm btn-secondary">Alterar</button>
                             <button type="button" class="btn btn-sm btn-danger">Excluir</button>
-                    </td>
+                        </td>
                 </tr>
                 <?php 
                 
