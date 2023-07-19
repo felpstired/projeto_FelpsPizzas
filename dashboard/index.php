@@ -43,6 +43,8 @@
         <div class="container-fluid">
 
           <div class="text-center" id="loading"></div>
+            <div class="ErrorAE bg-danger text-left d-none p-3"></div>
+            <div class="SuccessAE bg-success text-center d-none p-3">Ação concluída com sucesso!</div>
           <div class="conteudo" id="conteudo">
           </div>
           <!-- <div id="teste">

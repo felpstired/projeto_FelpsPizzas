@@ -1,6 +1,6 @@
 <?php
 
-$listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas', 'A');
+$listar = listarTudo('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas');
 
 ?>
 
@@ -11,7 +11,8 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
     <div class="card-body">
         <div class="row mb-3">
             <div class="col-12 text-center">
-                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modalAddPessoa">Cadastrar Pessoas</button>
+                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
+                    data-target="#modalAddPessoa">Cadastrar Pessoas</button>
             </div>
         </div>
         <table class="table table-striped">
@@ -38,43 +39,60 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
                     $ativo = $itemLista->ativo;
 
 
-                ?>
+                    ?>
                     <tr>
-                        <th scope="row" class="text-center"><?php echo $id; ?></th>
-                        <td class="text-center"><?php echo $nome; ?></td>
-                        <td class="text-center"><?php echo $email; ?></td>
-                        <td class="text-center"><?php echo $telefone; ?></td>
-                        <td class="text-center"><?php echo $cpf; ?></td>
-                        <td class="text-center"><?php echo $ativo; ?></td>
+                        <th scope="row" class="text-center">
+                            <?php echo $id; ?>
+                        </th>
+                        <td class="text-center">
+                            <?php echo $nome; ?>
+                        </td>
+                        <td class="text-center">
+                            <?php echo $email; ?>
+                        </td>
+                        <td class="text-center">
+                            <?php echo $telefone; ?>
+                        </td>
+                        <td class="text-center">
+                            <?php echo $cpf; ?>
+                        </td>
+                        <td class="text-center">
+                            <?php echo $ativo; ?>
+                        </td>
                         <td class="text-center">
 
                             <?php
                             if ($ativo == 'A') {
-                            ?>
+                                ?>
 
-                                <button type="button" class="btn btn-sm btn-warning tbcard" data-id="<?php echo $id; ?>">Desativar</button>
+                                <button type="button" class="btn btn-sm btn-warning tbcard"
+                                    onclick="ativaGeral('tbpessoas', 'idpessoas', <?php echo $id; ?>, 'desativar', 'listarPessoa');">Desativar</button>
 
-                            <?php
+                                <?php
                             } else if ($ativo == 'D') {
-                            ?>
+                                ?>
 
-                                <button type="button" class="btn btn-sm btn-success tbcard" data-id="<?php echo $id; ?>">Ativar</button>
+                                    <button type="button" class="btn btn-sm btn-success tbcard"
+                                            onclick="ativaGeral('tbpessoas', 'idpessoas', <?php echo $id; ?>, 'ativar', 'listarPessoa');">Ativar</button>
 
-                            <?php
+                                <?php
                             } else {
-                            ?>
+                                ?>
 
-                                <button type="button" class="btn btn-sm btn-warning tbcard disabled" data-id="<?php echo $id; ?>">Erro</button>
+                                    <button type="button" class="btn btn-sm btn-warning tbcard disabled">Erro</button>
 
-                            <?php
+                                <?php
                             }
                             ?>
 
-                            <button type="button" class="btn btn-sm btn-secondary">Alterar</button>
-                            <button type="button" class="btn btn-sm btn-danger" onclick="excGeral('tbpessoas', 'idpessoas', '<php echo $id; ?>', 'listarPessoa');">Excluir</button>
+                            <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal"
+                                data-target="#modalAltPessoa<?php echo $id; ?>">Alterar</button>
+                            <button type="button" class="btn btn-sm btn-danger"
+                                onclick="excGeral('tbpessoas', 'idpessoas', <?php echo $id ?>, 'listarPessoa');">Excluir</button>
                         </td>
                     </tr>
-                <?php
+
+                    <?php
 
                 }
 
@@ -84,7 +102,8 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
     </div>
 </div>
 
-<div class="modal fade" id="modalAddPessoa" tabindex="-1" role="dialog" aria-labelledby="modalAddPessoa" aria-hidden="true">
+<div class="modal fade" id="modalAddPessoa" tabindex="-1" role="dialog" aria-labelledby="modalAddPessoa"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -105,25 +124,29 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
 
                     <div class="form-group">
                         <label for="email">E-mail <span class="text-danger">*</span></label>
-                        <input type="email" class="form-control" id="email" placeholder="email@exemplo.com" name="email" required>
+                        <input type="email" class="form-control" id="email" placeholder="email@exemplo.com" name="email"
+                            required>
                     </div>
 
                     <div class="form-row">
 
                         <div class="form-group col-md-6">
                             <label for="telefone">Telefone <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="telefone" placeholder="(11) 9 1111-1111" name="telefone" minlength="11" required>
+                            <input type="text" class="form-control" id="telefone" placeholder="(11) 9 1111-1111"
+                                name="telefone" minlength="11" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="cpf">CPF</label>
-                            <input type="text" class="form-control" id="cpf" placeholder="111.111.111-11" name="cpf" minlength="11">
+                            <input type="text" class="form-control" id="cpf" placeholder="111.111.111-11" name="cpf"
+                                minlength="11">
                         </div>
 
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-success" onclick="cadPessoa('listarPessoa');">Cadastrar</button>
+                        <button type="submit" class="btn btn-success"
+                            onclick="cadPessoa('listarPessoa');">Cadastrar</button>
                     </div>
 
                     <div class="loadingf text-center p-3"></div>
@@ -138,24 +161,67 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
     </div>
 </div>
 
-<!--<div class="modal fade" id="modalExcPessoa" tabindex="-1" role="dialog" aria-labelledby="modalExcPessoa" aria-hidden="true">-->
+<!--<div class="modal fade" id="modalAltPessoa--><?php //echo $id; ?><!--" tabindex="-1" role="dialog"-->
+<!--     aria-labelledby="modalAltPessoa" aria-hidden="true">-->
 <!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
 <!--        <div class="modal-content">-->
 <!--            <div class="modal-header">-->
-<!--                <h5 class="modal-title" id="modalEPessoa">Excluir Registro de Pessoas</h5>-->
+<!--                <h5 class="modal-title" id="modalAPessoa">Alterar Registros</h5>-->
 <!--                <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">-->
 <!--                    <span aria-hidden="true">&times;</span>-->
 <!--                </button>-->
 <!--            </div>-->
 <!--            <div class="modal-body">-->
-<!--                <h4 class="text-center">Tem certeza que deseja deletar esse registro?</h4>-->
-<!--                <h5 class="text-center text-danger">Essa ação não pode ser desfeita.</h5>-->
+<!---->
+<!---->
+<!--                <form name="formAltPessoa--><?php //echo $id; ?><!--" id="formAltPessoa--><?php //echo $id; ?><!--" action="#">-->
+<!---->
+<!--                    <div class="form-group">-->
+<!--                        <label for="nome">Nome <span class="text-danger">*</span></label>-->
+<!--                        <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome"-->
+<!--                               value="--><?php //echo $nome; ?><!--" required>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="form-group">-->
+<!--                        <label for="email">E-mail <span class="text-danger">*</span></label>-->
+<!--                        <input type="email" class="form-control" id="email"-->
+<!--                               placeholder="email@exemplo.com" name="email" value="--><?php //echo $email; ?><!--"-->
+<!--                               required>-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="form-row">-->
+<!---->
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <label for="telefone">Telefone <span class="text-danger">*</span></label>-->
+<!--                            <input type="text" class="form-control" id="telefone"-->
+<!--                                   placeholder="(11) 9 1111-1111" name="telefone" minlength="11"-->
+<!--                                   value="--><?php //echo $telefone; ?><!--" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group col-md-6">-->
+<!--                            <label for="cpf">CPF</label>-->
+<!--                            <input type="text" class="form-control" id="cpf"-->
+<!--                                   placeholder="111.111.111-11" name="cpf" minlength="11"-->
+<!--                                   value="--><?php //echo $cpf; ?><!--">-->
+<!--                        </div>-->
+<!---->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="modal-footer">-->
+<!--                        <button type="button" class="btn btn-danger"-->
+<!--                                data-dismiss="modal">Fechar</button>-->
+<!--                        <button type="submit" class="btn btn-success"-->
+<!--                                onclick="altPessoas(<?php //echo $id; ?>, 'listarPessoa');">Alterar</button> -->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="loadingf text-center p-3"></div>-->
+<!--                    <div class="resultError bg-danger text-left d-none p-3"></div>-->
+<!--                    <div class="resultSuccess bg-success text-center d-none p-3">Alteração efetuada com-->
+<!--                        sucesso!</div>-->
+<!---->
+<!--                </form>-->
+<!---->
+<!---->
 <!--            </div>-->
-<!--            <div class="modal-footer text-center">-->
-<!--                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>-->
-<!--                <button type="button" class="btn btn-success" onclick="excGeral('listarPessoa');">Excluir</button>-->
-<!--            </div>-->
-<!--            <div class="loadingf text-center p-3"></div>-->
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
