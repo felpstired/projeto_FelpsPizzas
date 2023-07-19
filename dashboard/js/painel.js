@@ -27,6 +27,8 @@ $(document).ready(function () {
 
     $('input#cpf').mask('000.000.000-00', {reverse: true});
 
+    $('input#admissao').mask('00/00/0000');
+
 });
 
 function loading() {
@@ -43,6 +45,34 @@ function loadingf() {
 
 function loadingfend() {
     $('div.loadingf').html("");
+}
+
+function excGeral (tabela, nomeid, id, menuClicado) {
+
+    alert('AA');
+
+    let dados = {
+        acao: 'excGeral',
+        nomeid: nomeid,
+        id: id,
+        tabela: tabela,
+    };
+
+    alert('AA2');
+
+    $.ajax({
+        type: "POST",
+        dataType: 'html',
+        url: 'controle.php',
+        data: dados,
+        beforeSend: function () {
+
+        }, success: function () {
+            setTimeout(function () {
+                attPageCard(menuClicado);
+            }, 1000);
+        }
+    });
 }
 
 function cadCard(menuClicado) {

@@ -1,6 +1,6 @@
 <?php
 
-$listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.cargo, tbfuncionarios.ativo, tbpessoas.nome', 'tbfuncionarios', 'INNER', 'tbpessoas', 'idpessoas', 'A');
+$listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.cargo, tbfuncionarios.admissao, tbfuncionarios.ativo, tbpessoas.nome', 'tbfuncionarios', 'INNER', 'tbpessoas', 'idpessoas', 'A');
 
 ?>
 
@@ -20,7 +20,9 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
                     <th scope="col" width="1%" class="text-center">#</th>
                     <th scope="col" width="25%" class="text-center">Nome</th>
                     <th scope="col" width="25%" class="text-center">Cargo</th>
-                    <th scope="col" width="20%" class="text-center">Ações</th>
+                    <th scope="col" width="25%" class="text-center">Admissão</th>
+                    <th scope="col" width="1%" class="text-center">Ativo</th>
+                    <th scope="col" width="23%" class="text-center">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,7 +31,8 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
                 foreach ($listar as $itemLista) {
                     $id = $itemLista->idfuncionarios;
                     $nome = $itemLista->nome;
-                    $cargo = $itemLista->cargo;                    
+                    $cargo = $itemLista->cargo;
+                    $admissao = $itemLista->admissao;
                     $ativo = $itemLista->ativo;
 
                 ?>
@@ -37,6 +40,8 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
                         <th scope="row" class="text-center"><?php echo $id; ?></th>
                         <td class="text-center"><?php echo $nome; ?></td>
                         <td class="text-center"><?php echo $cargo; ?></td>
+                        <td class="text-center"><?php echo $admissao; ?></td>
+                        <td class="text-center"><?php echo $ativo; ?></td>
                         <td class="text-center">
 
                             <?php
@@ -97,7 +102,7 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
 
                     <div class="form-group">
                         <label for="pessoa">Pessoa <span class="text-danger">*</span></label>
-                        <select class="form-control" name="pessoa" id="pessoa" required>
+                        <select class="form-control" name="pessoa" id="pessoa" placeholder="Selecione uma pessoa" required>
                             <option selected>Selecione uma pessoa</option>
                             <?php
 
@@ -121,11 +126,11 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
 
                         <div class="form-group col-md-6">
                             <label for="cargo">Cargo <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="cargo" placeholder="(11) 9 1111-1111" name="cargo" required>
+                            <input type="text" class="form-control" id="cargo" placeholder="Digite um cargo..." name="cargo" maxlength="60" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="admissao">Admissão <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control datepicker" id="admissao" placeholder="111.111.111-11" name="admissao" maxlength="60" required>
+                            <input type="text" class="form-control" id="admissao" placeholder="DD/MM/AAAA" name="admissao" required>
                         </div>
 
                     </div>

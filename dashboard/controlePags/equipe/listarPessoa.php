@@ -71,7 +71,7 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
                             ?>
 
                             <button type="button" class="btn btn-sm btn-secondary">Alterar</button>
-                            <button type="button" class="btn btn-sm btn-danger">Excluir</button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="excGeral('tbpessoas', 'idpessoas', '<php echo $id; ?>', 'listarPessoa');">Excluir</button>
                         </td>
                     </tr>
                 <?php
@@ -137,3 +137,25 @@ $listar = listarRegistros('idpessoas, nome, email, telefone, cpf, ativo', 'tbpes
         </div>
     </div>
 </div>
+
+<!--<div class="modal fade" id="modalExcPessoa" tabindex="-1" role="dialog" aria-labelledby="modalExcPessoa" aria-hidden="true">-->
+<!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <h5 class="modal-title" id="modalEPessoa">Excluir Registro de Pessoas</h5>-->
+<!--                <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">-->
+<!--                    <span aria-hidden="true">&times;</span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <h4 class="text-center">Tem certeza que deseja deletar esse registro?</h4>-->
+<!--                <h5 class="text-center text-danger">Essa ação não pode ser desfeita.</h5>-->
+<!--            </div>-->
+<!--            <div class="modal-footer text-center">-->
+<!--                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>-->
+<!--                <button type="button" class="btn btn-success" onclick="excGeral('listarPessoa');">Excluir</button>-->
+<!--            </div>-->
+<!--            <div class="loadingf text-center p-3"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

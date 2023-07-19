@@ -56,6 +56,9 @@ switch ($acao) {
     case 'listarMapa':
         include_once './controlePags/contato/listarMapa.php';
         break;
+    case 'excGeral':
+        include_once './controlePags/excGeral.php';
+        break;
 }
 
 ?>
