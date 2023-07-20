@@ -115,7 +115,7 @@ $listar = listarTudo('idcard, icon, titulo, descricao, ativo', 'tbcard');
                     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-success" onclick="cadCard('listarCard');">Cadastrar</button>
+                        <button type="submit" class="btn btn-success" onclick="cadGeral('formCadCard', 'modalAddCard', 'addCard', 'listarCard');">Cadastrar</button>
                     </div>
 
                     <div class="loadingf text-center p-3"></div>

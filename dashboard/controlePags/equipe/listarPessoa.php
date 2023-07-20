@@ -146,7 +146,7 @@ $listar = listarTudo('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas'
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                         <button type="submit" class="btn btn-success"
-                            onclick="cadPessoa('listarPessoa');">Cadastrar</button>
+                            onclick="cadGeral('formCadPessoa', 'modalAddPessoa', 'addPessoa', 'listarPessoa');">Cadastrar</button>
                     </div>
 
                     <div class="loadingf text-center p-3"></div>

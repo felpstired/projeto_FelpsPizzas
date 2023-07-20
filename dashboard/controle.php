@@ -82,8 +82,8 @@ switch ($acao) {
     case 'excGeral':
         include_once './controlePags/excGeral.php';
         break;
-    case 'altGeral':
-        include_once './controlePags/altGeral.php';
+    case 'altAtivo':
+        include_once './controlePags/altAtivo.php';
         break;
 }
 

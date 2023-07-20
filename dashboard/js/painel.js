@@ -66,10 +66,8 @@ function excGeral(tabela, nomeid, id, menuClicado) {
         }, success: function (retorno) {
             loadingend();
             if (retorno == 'OK') {
+                attPage(menuClicado);
                 alert('Registro apagado com sucesso!');
-                setTimeout(function () {
-                    attPage(menuClicado);
-                }, 1000)
             } else {
                 alert('Erro! '+ retorno);
             }
@@ -80,7 +78,7 @@ function excGeral(tabela, nomeid, id, menuClicado) {
 function ativaGeral(tabela, nomeid, id, valor, menuClicado) {
 
     let dados = {
-        acao: 'altGeral',
+        acao: 'altAtivo',
         tabela: tabela,
         nomeid: nomeid,
         id: id,
@@ -97,90 +95,11 @@ function ativaGeral(tabela, nomeid, id, valor, menuClicado) {
         }, success: function (retorno) {
             loadingend();
             if (retorno == 'OK') {
+                attPage(menuClicado);
                 alert('Alteração feita com sucesso!');
-                setTimeout(function () {
-                    attPage(menuClicado);
-                }, 1000)
             } else {
                 alert('Erro! '+ retorno);
             }
-        }
-    });
-}
-
-// function altPessoas(id, menuClicado) {
-
-    // let formid = '#formAltPessoa' + id;
-    // let modalid = '#modalAltPessoa' + id;
-
-    // console.log('clicou');
-    // console.log(id);
-    // console.log(menuClicado);
-    //
-    // $('#formAltPessoa9').submit(function (cad) {
-    //     cad.preventDefault();
-    //
-    //     console.log('clicou e foi pra dentro');
-
-        // let form = this;
-        //
-        // let dataForm = $(this).serializeArray();
-        //
-        // form.querySelector('.resultError').classList.remove('d-block');
-        // form.querySelector('.resultSuccess').classList.remove('d-block');
-        //
-        // dataForm.push(
-        //     { name: 'acao', value: 'altPessoa' }
-        // );
-        //
-        // dataForm.push(
-        //     { name: 'id', value: id }
-        // );
-        //
-        // $.ajax({
-        //     type: "POST",
-        //     dataType: 'html',
-        //     url: 'controle.php',
-        //     data: dataForm,
-        //     beforeSend: function () {
-        //         loadingf();
-        //     }, success: function (retorno) {
-        //         loadingfend();
-        //         if (retorno == 'OK') {
-        //             form.querySelector('.resultSuccess').classList.remove('d-none');
-        //             form.querySelector('.resultSuccess').classList.add('d-block');
-        //             setTimeout(function () {
-        //                 attPageAlt(menuClicado);
-        //             }, 1000);
-        //         } else {
-        //             $(".resultError").html('Erro: ' + retorno);
-        //             form.querySelector('.resultError').classList.remove('d-none');
-        //             form.querySelector('.resultError').classList.add('d-block');
-        //         }
-        //     }
-        // });
-//
-//     });
-// }
-
-function attPageAlt(menuClicado) {
-
-    let dados = {
-        acao: menuClicado,
-    };
-
-    $.ajax({
-        type: "POST",
-        dataType: 'html',
-        url: 'controle.php',
-        data: dados,
-        beforeSend: function () {
-
-        }, success: function (retorno) {
-            $('#modalAltPessoa9').modal('hide');
-            setTimeout(function () {
-                $('div#conteudo').html(retorno);
-            }, 1000);
         }
     });
 }
@@ -206,9 +125,13 @@ function attPage(menuClicado) {
     });
 }
 
-function cadCard(menuClicado) {
 
-    $('#formCadCard').submit(function (cad) {
+
+
+// PARTE DOS CARDS
+function cadGeral(form, modal, page, menuClicado) {
+
+    $('#'+form).submit(function (cad) {
         cad.preventDefault();
 
         let form = this;
@@ -219,7 +142,7 @@ function cadCard(menuClicado) {
         form.querySelector('.resultSuccess').classList.remove('d-block');
 
         dadosForm.push(
-            { name: 'acao', value: 'addCard' },
+            { name: 'acao', value: page },
         );
 
         $.ajax({
@@ -236,7 +159,7 @@ function cadCard(menuClicado) {
                     form.querySelector('.resultSuccess').classList.add('d-block');
                     form.reset();
                     setTimeout(function () {
-                        attPageCard(menuClicado);
+                        attPageCad(modal, menuClicado);
                     }, 1000);
                 } else {
                     $(".resultError").html('Erro: ' + retorno);
@@ -250,7 +173,7 @@ function cadCard(menuClicado) {
     });
 };
 
-function attPageCard(menuClicado) {
+function attPageCad(modal, menuClicado) {
 
     let dados = {
         acao: menuClicado,
@@ -264,72 +187,7 @@ function attPageCard(menuClicado) {
         beforeSend: function () {
 
         }, success: function (retorno) {
-            $('#modalAddCard').modal('hide');
-            setTimeout(function () {
-                $('div#conteudo').html(retorno);
-            }, 1000);
-        }
-    });
-}
-
-function cadPessoa(menuClicado) {
-
-    $('#formCadPessoa').submit(function (cad) {
-        cad.preventDefault();
-
-        let form = this;
-
-        let dadosForm = $(this).serializeArray();
-
-        form.querySelector('.resultError').classList.remove('d-block');
-        form.querySelector('.resultSuccess').classList.remove('d-block');
-
-        dadosForm.push(
-            { name: 'acao', value: 'addPessoa' },
-        );
-
-        $.ajax({
-            type: "POST",
-            dataType: 'html',
-            url: 'controle.php',
-            data: dadosForm,
-            beforeSend: function () {
-                loadingf();
-            }, success: function (retorno) {
-                loadingfend();
-                if (retorno == 'OK') {
-                    form.querySelector('.resultSuccess').classList.remove('d-none');
-                    form.querySelector('.resultSuccess').classList.add('d-block');
-                    form.reset();
-                    setTimeout(function () {
-                        attPagePessoa(menuClicado);
-                    }, 1000);
-                } else {
-                    $(".resultError").html('Erro: ' + retorno);
-                    form.querySelector('.resultError').classList.remove('d-none');
-                    form.querySelector('.resultError').classList.add('d-block');
-                    form.reset();
-                }
-            }
-        });
-    });
-};
-
-function attPagePessoa(menuClicado) {
-
-    let dados = {
-        acao: menuClicado,
-    };
-
-    $.ajax({
-        type: "POST",
-        dataType: 'html',
-        url: 'controle.php',
-        data: dados,
-        beforeSend: function () {
-
-        }, success: function (retorno) {
-            $('#modalAddPessoa').modal('hide');
+            $('#'+modal).modal('hide');
             setTimeout(function () {
                 $('div#conteudo').html(retorno);
             }, 1000);

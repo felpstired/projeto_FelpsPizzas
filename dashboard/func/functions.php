@@ -153,9 +153,9 @@ function inserirRegistros($tabela, $campos, $valores) {
 function excluirRegistros($tabela, $nomeid, $id) {
     $conn = conectar();
     try {
-        $sqlLista = $conn->prepare("DELETE FROM $tabela WHERE $nomeid = ?");
-        $sqlLista->bindValue(1, $id, PDO::PARAM_INT);
-        $resul = $sqlLista->execute();
+        $sqlExc = $conn->prepare("DELETE FROM $tabela WHERE $nomeid = ?");-
+        $sqlExc->bindValue(1, $id, PDO::PARAM_INT);
+        $resul = $sqlExc->execute();
         if ($resul === false) {
             $conn->rollback();
             return false;
@@ -170,8 +170,9 @@ function excluirRegistros($tabela, $nomeid, $id) {
 function alterarRegistros($tabela, $valores, $nomeid, $id) {
     $conn = conectar();
     try {
-        $sqlLista = $conn->prepare("UPDATE $tabela SET $valores WHERE $nomeid = $id");
-        $resul = $sqlLista->execute();
+        $sqlAlter = $conn->prepare("UPDATE $tabela SET $valores WHERE $nomeid = ?");
+        $sqlAlter->bindValue(1, $id, PDO::PARAM_INT);
+        $resul = $sqlAlter->execute();
         if ($resul === false) {
             $conn->rollback();
             return false;
