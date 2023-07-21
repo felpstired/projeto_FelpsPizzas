@@ -49,25 +49,25 @@ $listar = listarTudo('idcard, icon, titulo, descricao, ativo', 'tbcard');
                             if ($ativo == 'A') {
                             ?>
 
-                                <button type="button" class="btn btn-sm btn-warning tbcard" data-id="<?php echo $id; ?>">Desativar</button>
+                                <button type="button" class="btn btn-sm btn-warning tbcard">Desativar</button>
 
                             <?php
                             } else if ($ativo == 'D') {
                             ?>
 
-                                <button type="button" class="btn btn-sm btn-success tbcard" data-id="<?php echo $id; ?>">Ativar</button>
+                                <button type="button" class="btn btn-sm btn-success tbcard">Ativar</button>
 
                             <?php
                             } else {
                             ?>
 
-                                <button type="button" class="btn btn-sm btn-warning tbcard disabled" data-id="<?php echo $id; ?>">Erro</button>
+                                <button type="button" class="btn btn-sm btn-warning tbcard disabled">Erro</button>
 
                             <?php
                             }
                             ?>
 
-                            <button type="button" class="btn btn-sm btn-secondary">Alterar</button>
+                            <button type="button" class="btn btn-sm btn-secondary" data-id="<?php echo $id; ?>">Alterar</button>
                             <button type="button" class="btn btn-sm btn-danger">Excluir</button>
                         </td>
                     </tr>

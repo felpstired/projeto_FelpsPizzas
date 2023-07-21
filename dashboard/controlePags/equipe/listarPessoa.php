@@ -65,28 +65,28 @@ $listar = listarTudo('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas'
                             if ($ativo == 'A') {
                                 ?>
 
-                                <button type="button" class="btn btn-sm btn-warning tbcard"
+                                <button type="button" class="btn btn-sm btn-warning"
                                     onclick="ativaGeral('tbpessoas', 'idpessoas', <?php echo $id; ?>, 'desativar', 'listarPessoa');">Desativar</button>
 
                                 <?php
                             } else if ($ativo == 'D') {
                                 ?>
 
-                                    <button type="button" class="btn btn-sm btn-success tbcard"
+                                    <button type="button" class="btn btn-sm btn-success"
                                             onclick="ativaGeral('tbpessoas', 'idpessoas', <?php echo $id; ?>, 'ativar', 'listarPessoa');">Ativar</button>
 
                                 <?php
                             } else {
                                 ?>
 
-                                    <button type="button" class="btn btn-sm btn-warning tbcard disabled">Erro</button>
+                                    <button type="button" class="btn btn-sm btn-warning disabled">Erro</button>
 
                                 <?php
                             }
                             ?>
 
                             <button type="button" class="btn btn-sm btn-secondary" data-toggle="modal"
-                                data-target="#modalAltPessoa<?php echo $id; ?>">Alterar</button>
+                                data-target="#modalAltPessoa" data-id="<?php echo $id; ?>">Alterar</button>
                             <button type="button" class="btn btn-sm btn-danger"
                                 onclick="excGeral('tbpessoas', 'idpessoas', <?php echo $id ?>, 'listarPessoa');">Excluir</button>
                         </td>
@@ -161,67 +161,82 @@ $listar = listarTudo('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas'
     </div>
 </div>
 
-<!--<div class="modal fade" id="modalAltPessoa--><?php //echo $id; ?><!--" tabindex="-1" role="dialog"-->
-<!--     aria-labelledby="modalAltPessoa" aria-hidden="true">-->
-<!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
-<!--        <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--                <h5 class="modal-title" id="modalAPessoa">Alterar Registros</h5>-->
-<!--                <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">-->
-<!--                    <span aria-hidden="true">&times;</span>-->
-<!--                </button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!---->
-<!---->
-<!--                <form name="formAltPessoa--><?php //echo $id; ?><!--" id="formAltPessoa--><?php //echo $id; ?><!--" action="#">-->
-<!---->
-<!--                    <div class="form-group">-->
-<!--                        <label for="nome">Nome <span class="text-danger">*</span></label>-->
-<!--                        <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome"-->
-<!--                               value="--><?php //echo $nome; ?><!--" required>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group">-->
-<!--                        <label for="email">E-mail <span class="text-danger">*</span></label>-->
-<!--                        <input type="email" class="form-control" id="email"-->
-<!--                               placeholder="email@exemplo.com" name="email" value="--><?php //echo $email; ?><!--"-->
-<!--                               required>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-row">-->
-<!---->
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <label for="telefone">Telefone <span class="text-danger">*</span></label>-->
-<!--                            <input type="text" class="form-control" id="telefone"-->
-<!--                                   placeholder="(11) 9 1111-1111" name="telefone" minlength="11"-->
-<!--                                   value="--><?php //echo $telefone; ?><!--" required>-->
-<!--                        </div>-->
-<!--                        <div class="form-group col-md-6">-->
-<!--                            <label for="cpf">CPF</label>-->
-<!--                            <input type="text" class="form-control" id="cpf"-->
-<!--                                   placeholder="111.111.111-11" name="cpf" minlength="11"-->
-<!--                                   value="--><?php //echo $cpf; ?><!--">-->
-<!--                        </div>-->
-<!---->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="modal-footer">-->
-<!--                        <button type="button" class="btn btn-danger"-->
-<!--                                data-dismiss="modal">Fechar</button>-->
-<!--                        <button type="submit" class="btn btn-success"-->
-<!--                                onclick="altPessoas(<?php //echo $id; ?>, 'listarPessoa');">Alterar</button> -->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="loadingf text-center p-3"></div>-->
-<!--                    <div class="resultError bg-danger text-left d-none p-3"></div>-->
-<!--                    <div class="resultSuccess bg-success text-center d-none p-3">Alteração efetuada com-->
-<!--                        sucesso!</div>-->
-<!---->
-<!--                </form>-->
-<!---->
-<!---->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="modal fade" id="modalAltPessoa" tabindex="-1" role="dialog"
+     aria-labelledby="modalAltPessoa" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAPessoa">Alterar Registros</h5>
+                <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <form name="formAltPessoa" id="formAltPessoa" action="#">
+
+                    <div class="form-group">
+                        <label for="nome">Nome <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome"
+                               value="" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email"
+                               placeholder="email@exemplo.com" name="email" value=""
+                               required>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="telefone">Telefone <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="telefone"
+                                   placeholder="(11) 9 1111-1111" name="telefone" minlength="11"
+                                   value="" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cpf">CPF</label>
+                            <input type="text" class="form-control" id="cpf"
+                                   placeholder="111.111.111-11" name="cpf" minlength="11"
+                                   value="">
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger"
+                                data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-success"
+                                onclick="altPessoas(<?php echo $id; ?>, 'listarPessoa');">Alterar</button>
+                    </div>
+
+                    <div class="loadingf text-center p-3"></div>
+                    <div class="resultError bg-danger text-left d-none p-3"></div>
+                    <div class="resultSuccess bg-success text-center d-none p-3">Alteração efetuada com
+                        sucesso!</div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $('#modalAltPessoa').on('show.bs.modal', function (event) {
+
+        let btn = $(event.relatedTarget);
+        let btnResult = btn.data('id');
+
+        let dadosTable = pegarDados(campos, tabela, nomeid, id)('nome,', 'tbpessoas', 'idpessoas', btnResult);
+
+        alert(dadosTable);
+
+    });
+
+</script>

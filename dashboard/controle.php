@@ -27,7 +27,7 @@ switch ($acao) {
     case 'listarFuncionario':
         include_once './controlePags/equipe/listarFuncionario.php';
         break;
-    case 'addFunci':
+    case 'addFuncionario':
         include_once './controlePags/equipe/addFuncionario.php';
         break;
 
@@ -84,6 +84,9 @@ switch ($acao) {
         break;
     case 'altAtivo':
         include_once './controlePags/altAtivo.php';
+        break;
+    case 'pegarDados':
+        include_once './controlePags/pegarDados.php';
         break;
 }
 

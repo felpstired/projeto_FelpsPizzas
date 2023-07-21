@@ -48,19 +48,19 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
                             if ($ativo == 'A') {
                             ?>
 
-                                <button type="button" class="btn btn-sm btn-warning tbcard" data-id="<?php echo $id; ?>">Desativar</button>
+                                <button type="button" class="btn btn-sm btn-warning" data-id="<?php echo $id; ?>">Desativar</button>
 
                             <?php
                             } else if ($ativo == 'D') {
                             ?>
 
-                                <button type="button" class="btn btn-sm btn-success tbcard" data-id="<?php echo $id; ?>">Ativar</button>
+                                <button type="button" class="btn btn-sm btn-success" data-id="<?php echo $id; ?>">Ativar</button>
 
                             <?php
                             } else {
                             ?>
 
-                                <button type="button" class="btn btn-sm btn-warning tbcard disabled" data-id="<?php echo $id; ?>">Erro</button>
+                                <button type="button" class="btn btn-sm btn-warning disabled" data-id="<?php echo $id; ?>">Erro</button>
 
                             <?php
                             }
@@ -80,7 +80,7 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
     </div>
 </div>
 
-<div class="modal fade" id="modalAddFuncionario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalAddFuncionario" tabindex="-1" role="dialog" aria-labelledby="modalAddFuncionario" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -97,6 +97,10 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
                     <?php
 
                     $listarP = listarRegistros('idpessoas, nome', 'tbpessoas', 'A');
+
+                    if ($listarP === false) {
+                        echo '<h6 class="text-center mt-5 p-3 bg-danger text-white">Não foi possível resgatar registros no banco!<br>Por favor, tente novamente mais tarde.</h6>';
+                    } else {
 
                     ?>
 
@@ -122,6 +126,12 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
                         </select>
                     </div>
 
+                    <?php
+
+                    }
+
+                    ?>
+
                     <div class="form-row">
 
                         <div class="form-group col-md-6">
@@ -137,7 +147,7 @@ $listar = listarRegistrosJoin('tbfuncionarios.idfuncionarios, tbfuncionarios.car
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-success" onclick="cadPessoa();">Cadastrar</button>
+                        <button type="submit" class="btn btn-success <?php  if ($listarP === false) { echo 'disabled'; } ?>" onclick="cadGeral('formCadFunci', 'modalAddFuncionario', 'addFuncionario', 'listarFuncionario');">Cadastrar</button>
                     </div>
 
                     <div class="resultError bg-danger text-left d-none p-3"></div>

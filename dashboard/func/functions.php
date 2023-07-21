@@ -31,6 +31,22 @@ function listarRegistros($campos, $tabela, $ativo) {
     };
 };
 
+function listarRegistros2($campos, $tabela, $idcampo, $id) {
+    $conn = conectar();
+    try {
+        $sqlLista = $conn->prepare("SELECT $campos FROM $tabela WHERE $idcampo = ? ");
+        $sqlLista->bindValue(1, $id, PDO::PARAM_INT);
+        $sqlLista->execute();
+        if ($sqlLista->rowCount() > 0) {
+            return $sqlLista->fetchAll(PDO::FETCH_OBJ);
+        } else {
+            return false;
+        };
+    } catch (PDOException $e) {
+        return 'Não foi possível acessar os dados. Erro: ' . $e->getMessage();
+    };
+};
+
 function listarRegistrosPar($campos, $tabela, $ativo, $param2, $valp2) {
     $conn = conectar();
     try {
@@ -42,10 +58,10 @@ function listarRegistrosPar($campos, $tabela, $ativo, $param2, $valp2) {
             return $sqlLista->fetchAll(PDO::FETCH_OBJ);
         } else {
             return false;
-        };
+        }
     } catch (PDOException $e) {
         return 'Não foi possível acessar os dados. Erro: ' . $e->getMessage();
-    };
+    }
 };
 
 function listarRegistrosPar2($campos, $tabela, $ativo, $param2, $valp2) {

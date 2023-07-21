@@ -171,7 +171,7 @@ function cadGeral(form, modal, page, menuClicado) {
         });
 
     });
-};
+}
 
 function attPageCad(modal, menuClicado) {
 
@@ -191,6 +191,34 @@ function attPageCad(modal, menuClicado) {
             setTimeout(function () {
                 $('div#conteudo').html(retorno);
             }, 1000);
+        }
+    });
+}
+
+function pegarDados(campos, tabela, nomeid, id) {
+
+    let dados = {
+        acao: 'pegarDados',
+        campos: campos,
+        tabela: tabela,
+        nomeid: nomeid,
+        id: id,
+    };
+
+    $.ajax({
+        type: "POST",
+        dataType: 'html',
+        url: 'controle.php',
+        data: dados,
+        beforeSend: function () {
+            loading();
+        }, success: function (retorno) {
+            loadingend();
+            if (retorno == 'ERRO') {
+                alert('Ocorreu um erro ao tentar obter os dados! Tente novamente mais tarde.');
+            } else {
+                alert(retorno);
+            }
         }
     });
 }
