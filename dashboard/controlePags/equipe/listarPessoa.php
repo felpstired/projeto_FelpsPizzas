@@ -228,14 +228,17 @@ $listar = listarTudo('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas'
 
 <script>
 
-    $('#modalAltPessoa').on('show.bs.modal', function (event) {
+    $('#modalAltPessoa').on('shown.bs.modal', function (event) {
+
+        $('input#nome').trigger('focus');
 
         let btn = $(event.relatedTarget);
         let btnResult = btn.data('id');
 
-        let dadosTable = pegarDados(campos, tabela, nomeid, id)('nome,', 'tbpessoas', 'idpessoas', btnResult);
+        const dadosTable = pegarDados('nome, email, telefone, cpf', 'tbpessoas', 'idpessoas', btnResult);
+        console.log(dadosTable);
 
-        alert(dadosTable);
+
 
     });
 

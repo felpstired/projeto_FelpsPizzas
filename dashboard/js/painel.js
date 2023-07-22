@@ -23,6 +23,20 @@ $(document).ready(function () {
         });
     });
 
+
+    // $('#modalAltPessoa').on('shown.bs.modal', function (event) {
+    //
+    //     $('input#nome').trigger('focus');
+    //
+    //     let btn = $(event.relatedTarget);
+    //     let btnResult = btn.data('id');
+    //
+    //     let dadosTable = pegarDados('nome, email, telefone, cpf', 'tbpessoas', 'idpessoas', btnResult);
+    //     console.log(dadosTable);
+    //
+    // });
+
+
     $('input#telefone').mask('(00) 0 0000-0000');
 
     $('input#cpf').mask('000.000.000-00', { reverse: true });
@@ -65,6 +79,7 @@ function excGeral(tabela, nomeid, id, menuClicado) {
             loading();
         }, success: function (retorno) {
             loadingend();
+            console.log(retorno);
             if (retorno == 'OK') {
                 attPage(menuClicado);
                 alert('Registro apagado com sucesso!');
@@ -94,6 +109,7 @@ function ativaGeral(tabela, nomeid, id, valor, menuClicado) {
             loading();
         }, success: function (retorno) {
             loadingend();
+            console.log(retorno);
             if (retorno == 'OK') {
                 attPage(menuClicado);
                 alert('Alteração feita com sucesso!');
@@ -154,6 +170,7 @@ function cadGeral(form, modal, page, menuClicado) {
                 loadingf();
             }, success: function (retorno) {
                 loadingfend();
+                console.log(retorno);
                 if (retorno == 'OK') {
                     form.querySelector('.resultSuccess').classList.remove('d-none');
                     form.querySelector('.resultSuccess').classList.add('d-block');
@@ -207,17 +224,19 @@ function pegarDados(campos, tabela, nomeid, id) {
 
     $.ajax({
         type: "POST",
-        dataType: 'html',
+        dataType: 'json',
         url: 'controle.php',
         data: dados,
         beforeSend: function () {
             loading();
         }, success: function (retorno) {
             loadingend();
+            // console.log(retorno);
             if (retorno == 'ERRO') {
                 alert('Ocorreu um erro ao tentar obter os dados! Tente novamente mais tarde.');
             } else {
-                alert(retorno);
+                console.log(retorno);
+                return retorno;
             }
         }
     });
