@@ -236,8 +236,12 @@ $listar = listarTudo('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas'
         let btnResult = btn.data('id');
 
         const dadosTable = pegarDados('nome, email, telefone, cpf', 'tbpessoas', 'idpessoas', btnResult);
+
         console.log(dadosTable);
 
+        // let nome = dadosTable.dadosArray[0].nome;
+        //
+        // console.log(nome);
 
 
     });

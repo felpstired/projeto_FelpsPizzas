@@ -235,6 +235,7 @@ function pegarDados(campos, tabela, nomeid, id) {
             if (retorno == 'ERRO') {
                 alert('Ocorreu um erro ao tentar obter os dados! Tente novamente mais tarde.');
             } else {
+                console.log(retorno.dadosArray[0].nome);
                 console.log(retorno);
                 return retorno;
             }
