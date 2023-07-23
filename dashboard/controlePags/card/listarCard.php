@@ -47,28 +47,30 @@ $listar = listarTudo('idcard, icon, titulo, descricao, ativo', 'tbcard');
 
                             <?php
                             if ($ativo == 'A') {
-                            ?>
+                                ?>
 
-                                <button type="button" class="btn btn-sm btn-warning tbcard">Desativar</button>
+                                <button type="button" class="btn btn-sm btn-warning"
+                                        onclick="ativaGeral('tbcard', 'idcard', <?php echo $id; ?>, 'desativar', 'listarCard');">Desativar</button>
 
-                            <?php
+                                <?php
                             } else if ($ativo == 'D') {
-                            ?>
+                                ?>
 
-                                <button type="button" class="btn btn-sm btn-success tbcard">Ativar</button>
+                                <button type="button" class="btn btn-sm btn-success"
+                                        onclick="ativaGeral('tbcard', 'idcard', <?php echo $id; ?>, 'ativar', 'listarCard');">Ativar</button>
 
-                            <?php
+                                <?php
                             } else {
-                            ?>
+                                ?>
 
-                                <button type="button" class="btn btn-sm btn-warning tbcard disabled">Erro</button>
+                                <button type="button" class="btn btn-sm btn-warning disabled">Erro</button>
 
-                            <?php
+                                <?php
                             }
                             ?>
 
                             <button type="button" class="btn btn-sm btn-secondary" data-id="<?php echo $id; ?>">Alterar</button>
-                            <button type="button" class="btn btn-sm btn-danger">Excluir</button>
+                            <button type="button" class="btn btn-sm btn-danger" onclick="excGeral('tbcard', 'idcard', <?php echo $id ?>, 'listarCard');">Excluir</button>
                         </td>
                     </tr>
                 <?php
