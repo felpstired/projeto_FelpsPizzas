@@ -209,8 +209,8 @@ $listar = listarTudo('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas'
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger"
                                 data-dismiss="modal">Fechar</button>
-                        <button type="submit" class="btn btn-success"
-                                onclick="altPessoas(<?php echo $id; ?>, 'listarPessoa');">Alterar</button>
+                        <button type="submit" class="btn btn-success" id="btnAlt" data-idAlt=""
+                                onclick="altGeral('formAltPessoa', 'modalAltPessoa', 'altPessoa', 'listarPessoa');">Alterar</button>
                     </div>
 
                     <div class="loadingf text-center p-3"></div>
@@ -228,22 +228,22 @@ $listar = listarTudo('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas'
 
 <script>
 
-    $('#modalAltPessoa').on('shown.bs.modal', function (event) {
-
-        $('input#nome').trigger('focus');
-
-        let btn = $(event.relatedTarget);
-        let btnResult = btn.data('id');
-
-        const dadosTable = pegarDados('nome, email, telefone, cpf', 'tbpessoas', 'idpessoas', btnResult);
-
-        console.log(dadosTable);
-
-        // let nome = dadosTable.dadosArray[0].nome;
-        //
-        // console.log(nome);
-
-
-    });
+    // $('#modalAltPessoa').on('shown.bs.modal', function (event) {
+    //
+    //     $('input#nome').trigger('focus');
+    //
+    //     let btn = $(event.relatedTarget);
+    //     let btnResult = btn.data('id');
+    //
+    //     const dadosTable = pegarDados('nome, email, telefone, cpf', 'tbpessoas', 'idpessoas', btnResult);
+    //
+    //     console.log(dadosTable);
+    //
+    //     // let nome = dadosTable.dadosArray[0].nome;
+    //     //
+    //     // console.log(nome);
+    //
+    //
+    // });
 
 </script>

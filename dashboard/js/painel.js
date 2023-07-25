@@ -24,17 +24,43 @@ $(document).ready(function () {
     });
 
 
-    // $('#modalAltPessoa').on('shown.bs.modal', function (event) {
-    //
-    //     $('input#nome').trigger('focus');
-    //
-    //     let btn = $(event.relatedTarget);
-    //     let btnResult = btn.data('id');
-    //
-    //     let dadosTable = pegarDados('nome, email, telefone, cpf', 'tbpessoas', 'idpessoas', btnResult);
-    //     console.log(dadosTable);
-    //
-    // });
+    $('#modalAltPessoa').on('shown.bs.modal', function (event) {
+
+        $('input#nome').trigger('focus');
+
+        let btn = $(event.relatedTarget);
+        let btnResult = btn.data('id');
+
+        let dados = {
+            acao: 'pegarDados',
+            campos: 'nome, email, telefone, cpf',
+            tabela: 'tbpessoas',
+            nomeid: 'idpessoas',
+            id: btnResult,
+        };
+
+        $.ajax({
+            type: "POST",
+            dataType: 'json',
+            url: 'controle.php',
+            data: dados,
+            beforeSend: function () {
+                loading();
+            }, success: function (retorno) {
+                loadingend();
+                // console.log(retorno);
+                if (retorno == 'ERRO') {
+                    alert('Ocorreu um erro ao tentar obter os dados! Tente novamente mais tarde.');
+                } else {
+                    $('input#nome').val(retorno.dadosArray[0].nome);
+                    $('input#email').val(retorno.dadosArray[0].email);
+                    $('input#telefone').val(retorno.dadosArray[0].telefone);
+                    $('input#cpf').val(retorno.dadosArray[0].cpf);
+                }
+            }
+        });
+
+    });
 
 
     $('input#telefone').mask('(00) 0 0000-0000');
@@ -141,11 +167,52 @@ function attPage(menuClicado) {
     });
 }
 
-
-
-
-// PARTE DOS CARDS
 function cadGeral(form, modal, page, menuClicado) {
+
+    $('#'+form).submit(function (cad) {
+        cad.preventDefault();
+
+        let form = this;
+
+        let dadosForm = $(this).serializeArray();
+
+        form.querySelector('.resultError').classList.remove('d-block');
+        form.querySelector('.resultSuccess').classList.remove('d-block');
+
+        dadosForm.push(
+            { name: 'acao', value: page },
+        );
+
+        $.ajax({
+            type: "POST",
+            dataType: 'html',
+            url: 'controle.php',
+            data: dadosForm,
+            beforeSend: function () {
+                loadingf();
+            }, success: function (retorno) {
+                loadingfend();
+                console.log(retorno);
+                if (retorno == 'OK') {
+                    form.querySelector('.resultSuccess').classList.remove('d-none');
+                    form.querySelector('.resultSuccess').classList.add('d-block');
+                    form.reset();
+                    setTimeout(function () {
+                        attPageCad(modal, menuClicado);
+                    }, 1000);
+                } else {
+                    $(".resultError").html('Erro: ' + retorno);
+                    form.querySelector('.resultError').classList.remove('d-none');
+                    form.querySelector('.resultError').classList.add('d-block');
+                    form.reset();
+                }
+            }
+        });
+
+    });
+}
+
+function altGeral(form, modal, page, menuClicado) {
 
     $('#'+form).submit(function (cad) {
         cad.preventDefault();
@@ -212,36 +279,36 @@ function attPageCad(modal, menuClicado) {
     });
 }
 
-function pegarDados(campos, tabela, nomeid, id) {
-
-    let dados = {
-        acao: 'pegarDados',
-        campos: campos,
-        tabela: tabela,
-        nomeid: nomeid,
-        id: id,
-    };
-
-    $.ajax({
-        type: "POST",
-        dataType: 'json',
-        url: 'controle.php',
-        data: dados,
-        beforeSend: function () {
-            loading();
-        }, success: function (retorno) {
-            loadingend();
-            // console.log(retorno);
-            if (retorno == 'ERRO') {
-                alert('Ocorreu um erro ao tentar obter os dados! Tente novamente mais tarde.');
-            } else {
-                console.log(retorno.dadosArray[0].nome);
-                console.log(retorno);
-                return retorno;
-            }
-        }
-    });
-}
+// function pegarDados(campos, tabela, nomeid, id) {
+//
+//     let dados = {
+//         acao: 'pegarDados',
+//         campos: campos,
+//         tabela: tabela,
+//         nomeid: nomeid,
+//         id: id,
+//     };
+//
+//     $.ajax({
+//         type: "POST",
+//         dataType: 'json',
+//         url: 'controle.php',
+//         data: dados,
+//         beforeSend: function () {
+//             loading();
+//         }, success: function (retorno) {
+//             loadingend();
+//             // console.log(retorno);
+//             if (retorno == 'ERRO') {
+//                 alert('Ocorreu um erro ao tentar obter os dados! Tente novamente mais tarde.');
+//             } else {
+//                 console.log(retorno.dadosArray[0].nome);
+//                 console.log(retorno);
+//                 return retorno;
+//             }
+//         }
+//     });
+// }
 
 // setTimeout(function () {
 //     $('div#loading').html("");
