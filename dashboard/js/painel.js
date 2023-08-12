@@ -23,6 +23,10 @@ $(document).ready(function () {
         });
     });
 
+    $('#modalAddPessoa').on('shown.bs.modal', function () {
+        $('input#nome').trigger('focus');
+    });
+
 
     $('#modalAltPessoa').on('shown.bs.modal', function (event) {
 
@@ -45,9 +49,9 @@ $(document).ready(function () {
             url: 'controle.php',
             data: dados,
             beforeSend: function () {
-                loading();
+                // loading();
             }, success: function (retorno) {
-                loadingend();
+                // loadingend();
                 // console.log(retorno);
                 if (retorno == 'ERRO') {
                     alert('Ocorreu um erro ao tentar obter os dados! Tente novamente mais tarde.');
@@ -59,6 +63,50 @@ $(document).ready(function () {
                 }
             }
         });
+
+
+            $('#formAltPessoa').submit(function (cad) {
+                cad.preventDefault();
+
+                let form = this;
+
+                let dadosForm = $(this).serializeArray();
+
+                form.querySelector('.resultError').classList.remove('d-block');
+                form.querySelector('.resultSuccess').classList.remove('d-block');
+
+                dadosForm.push(
+                    { name: 'acao', value: 'altPessoa' },
+                    { name: 'id', value: btnResult },
+                );
+
+                $.ajax({
+                    type: "POST",
+                    dataType: 'html',
+                    url: 'controle.php',
+                    data: dadosForm,
+                    beforeSend: function () {
+                        loadingf();
+                    }, success: function (retorno) {
+                        loadingfend();
+                        console.log(retorno);
+                        if (retorno == 'OK') {
+                            form.querySelector('.resultSuccess').classList.remove('d-none');
+                            form.querySelector('.resultSuccess').classList.add('d-block');
+                            form.reset();
+                            setTimeout(function () {
+                                attPageCad('modalAltPessoa', 'listarPessoa');
+                            }, 1000);
+                        } else {
+                            $(".resultError").html('Erro: ' + retorno);
+                            form.querySelector('.resultError').classList.remove('d-none');
+                            form.querySelector('.resultError').classList.add('d-block');
+                            form.reset();
+                        }
+                    }
+                });
+
+            });
 
     });
 
@@ -212,50 +260,50 @@ function cadGeral(form, modal, page, menuClicado) {
     });
 }
 
-function altGeral(form, modal, page, menuClicado) {
-
-    $('#'+form).submit(function (cad) {
-        cad.preventDefault();
-
-        let form = this;
-
-        let dadosForm = $(this).serializeArray();
-
-        form.querySelector('.resultError').classList.remove('d-block');
-        form.querySelector('.resultSuccess').classList.remove('d-block');
-
-        dadosForm.push(
-            { name: 'acao', value: page },
-        );
-
-        $.ajax({
-            type: "POST",
-            dataType: 'html',
-            url: 'controle.php',
-            data: dadosForm,
-            beforeSend: function () {
-                loadingf();
-            }, success: function (retorno) {
-                loadingfend();
-                console.log(retorno);
-                if (retorno == 'OK') {
-                    form.querySelector('.resultSuccess').classList.remove('d-none');
-                    form.querySelector('.resultSuccess').classList.add('d-block');
-                    form.reset();
-                    setTimeout(function () {
-                        attPageCad(modal, menuClicado);
-                    }, 1000);
-                } else {
-                    $(".resultError").html('Erro: ' + retorno);
-                    form.querySelector('.resultError').classList.remove('d-none');
-                    form.querySelector('.resultError').classList.add('d-block');
-                    form.reset();
-                }
-            }
-        });
-
-    });
-}
+// function altGeral(form, modal, page, menuClicado) {
+//
+//     $('#'+form).submit(function (cad) {
+//         cad.preventDefault();
+//
+//         let form = this;
+//
+//         let dadosForm = $(this).serializeArray();
+//
+//         form.querySelector('.resultError').classList.remove('d-block');
+//         form.querySelector('.resultSuccess').classList.remove('d-block');
+//
+//         dadosForm.push(
+//             { name: 'acao', value: page },
+//         );
+//
+//         $.ajax({
+//             type: "POST",
+//             dataType: 'html',
+//             url: 'controle.php',
+//             data: dadosForm,
+//             beforeSend: function () {
+//                 loadingf();
+//             }, success: function (retorno) {
+//                 loadingfend();
+//                 console.log(retorno);
+//                 if (retorno == 'OK') {
+//                     form.querySelector('.resultSuccess').classList.remove('d-none');
+//                     form.querySelector('.resultSuccess').classList.add('d-block');
+//                     form.reset();
+//                     setTimeout(function () {
+//                         attPageCad(modal, menuClicado);
+//                     }, 1000);
+//                 } else {
+//                     $(".resultError").html('Erro: ' + retorno);
+//                     form.querySelector('.resultError').classList.remove('d-none');
+//                     form.querySelector('.resultError').classList.add('d-block');
+//                     form.reset();
+//                 }
+//             }
+//         });
+//
+//     });
+// }
 
 function attPageCad(modal, menuClicado) {
 

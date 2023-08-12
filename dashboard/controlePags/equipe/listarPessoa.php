@@ -210,7 +210,7 @@ $listar = listarTudo('idpessoas, nome, email, telefone, cpf, ativo', 'tbpessoas'
                         <button type="button" class="btn btn-danger"
                                 data-dismiss="modal">Fechar</button>
                         <button type="submit" class="btn btn-success" id="btnAlt" data-idAlt=""
-                                onclick="altGeral('formAltPessoa', 'modalAltPessoa', 'altPessoa', 'listarPessoa');">Alterar</button>
+                                onclick="altPessoas();">Alterar</button>
                     </div>
 
                     <div class="loadingf text-center p-3"></div>

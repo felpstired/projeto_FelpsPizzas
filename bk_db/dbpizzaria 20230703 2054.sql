@@ -78,7 +78,7 @@ CREATE TABLE `tbbanner` (
 /*!40000 ALTER TABLE `tbbanner` DISABLE KEYS */;
 INSERT INTO `tbbanner` (`idbanner`,`imagem`,`titulo`,`descricao`,`video`,`cadastro`,`alteracao`,`ativo`) VALUES 
  (1,'https://i.pinimg.com/originals/e6/97/d9/e697d97e0496c5b50f3e17d70f6b1745.jpg','Golden Maknae','Integrante mais novo do grupo popular de K-POP, BTS, Jeon Jungkook é o chamado Golden Maknae por ser exepcional em tudo que faz, sendo reconhecido tanto dentro quanto fora da bolha.','https://www.youtube.com/watch?v=djV11Xbc914','2023-04-28 00:00:00','2023-06-02 18:41:05','D'),
- (2,'assets/img/hero-img.png','Aproveite uma Saudável e<br>Deliciosa Comida','Está afim de pedir uma pizza boa? Então escolha Felps Pizza\'s, a melhor da cidade! Peça da pizzaria mais famosa da cidade em sua casa, entrega rápida!','https://www.youtube.com/watch?v=LXb3EKWsInQ','2023-05-13 23:21:46','2023-07-03 13:35:20','A');
+ (2,'assets/img/hero-img.png','Aproveite uma Saudável e<br>Deliciosa Comida','Está afim de pedir uma pizza boa? Então escolha Felps Pizzas, a melhor da cidade! Peça da pizzaria mais famosa da cidade em sua casa, entrega rápida!','https://www.youtube.com/watch?v=LXb3EKWsInQ','2023-05-13 23:21:46','2023-07-03 13:35:20','A');
 /*!40000 ALTER TABLE `tbbanner` ENABLE KEYS */;
 
 
@@ -104,7 +104,7 @@ CREATE TABLE `tbcard` (
 
 /*!40000 ALTER TABLE `tbcard` DISABLE KEYS */;
 INSERT INTO `tbcard` (`idcard`,`icon`,`titulo`,`descricao`,`cadastro`,`alteracao`,`ativo`) VALUES 
- (1,'','Por que escolher nosso restaurante?','A Felps\'s Pizza é uma empresa antenada e focada no consumidor. Seja com o amor da sua vida, aquele amigo chegado ou até o chefe que te fez ficar depois do expediente, nossa pizza vai dar água na boca e tirar um sorriso dos lábios.','2023-05-13 12:25:43','2023-07-03 13:26:46','A'),
+ (1,'','Por que escolher nosso restaurante?','A Felps Pizzas é uma empresa antenada e focada no consumidor. Seja com o amor da sua vida, aquele amigo chegado ou até o chefe que te fez ficar depois do expediente, nossa pizza vai dar água na boca e tirar um sorriso dos lábios.','2023-05-13 12:25:43','2023-07-03 13:26:46','A'),
  (2,'bi bi-clipboard-data','Missão','Oferecer o melhor da pizza, garantindo a satisfação dos nossos clientes. Ser a primeira opção de pizzaria para sua família. ','2023-05-13 12:25:43','2023-07-03 13:26:46','A'),
  (3,'bi bi-gem','Visão','Ser uma empresa referência de mercado no ramo alimentício, operando formato de negócios diferenciados e de alto valor agregado.','2023-05-13 12:25:43','2023-07-03 13:26:46','A'),
  (4,'bi bi-inboxes','Valores','Tradição, higiene, valorização humana e do meio-ambiente, alto padrão de qualidade e eficiência.','2023-05-13 12:25:43','2023-07-03 13:29:20','A');
@@ -512,7 +512,7 @@ CREATE TABLE `tbpessoas` (
   `alteracao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `ativo` char(1) NOT NULL DEFAULT 'A',
   PRIMARY KEY (`idpessoas`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbpessoas`
@@ -530,17 +530,7 @@ INSERT INTO `tbpessoas` (`idpessoas`,`nome`,`email`,`telefone`,`cpf`,`cadastro`,
  (8,'Ana Alves','anaalves@gmail.com','(33) 9 1234-1234','123.123.123-12','2023-04-28 12:35:43','2023-06-27 18:33:15','A'),
  (9,'Ana','analu@gmail.com','(33) 9 9923-6621',NULL,'2023-06-29 18:32:42','2023-06-29 18:32:42','A'),
  (10,'Geísa','gege@gmail.com','(31) 9 2712-8127',NULL,'2023-06-29 18:57:45','2023-06-29 18:57:45','A'),
- (11,'juse','juse@asdsad.com','231423424',NULL,'2023-06-29 21:27:38','2023-06-29 21:27:38','A'),
- (12,'Teste','jovana@aa','1234',NULL,'2023-06-30 18:30:01','2023-06-30 18:30:01','A'),
- (13,'rgfdgdfg','dfgdfg@adsadasd','asdasdasd',NULL,'2023-06-30 18:40:13','2023-06-30 18:40:13','A'),
- (14,'rgfdgdfg','dfgdfg@adsadasddfdf','asdasdasd',NULL,'2023-06-30 19:02:33','2023-06-30 19:02:33','A'),
- (15,'weawerqrew','ewrwerwerewr@dfsdfsdf','qweqweqwe',NULL,'2023-06-30 19:02:55','2023-06-30 19:02:55','A'),
- (16,'cxzczxczxc','zxczxczx@sdfsdfsdf','dsfsdfsdfs',NULL,'2023-06-30 19:10:26','2023-06-30 19:10:26','A'),
- (17,'fcsdfsdfsd','sdfsdfsd@dsfsdf','sdfsdf',NULL,'2023-06-30 21:10:40','2023-06-30 21:10:40','A'),
- (18,'TETSETT','TETSTET@A','ETTSTE',NULL,'2023-07-03 12:44:07','2023-07-03 12:44:07','A'),
- (19,'ana','asasasas@asasas','2312344',NULL,'2023-07-03 12:47:28','2023-07-03 12:47:28','A'),
- (20,'Teste','00008876335@senaimgaluno.com.br','aaaaaaa',NULL,'2023-07-03 18:37:23','2023-07-03 18:37:23','A'),
- (21,'fgfdgdf','gdfgfdg@dsfsfsdfdsf','dfgdfgdf',NULL,'2023-07-03 18:37:59','2023-07-03 18:37:59','A');
+ (11,'juse','juse@asdsad.com','231423424',NULL,'2023-06-29 21:27:38','2023-06-29 21:27:38','A');
 /*!40000 ALTER TABLE `tbpessoas` ENABLE KEYS */;
 
 
@@ -677,7 +667,7 @@ CREATE TABLE `tbsobre` (
 
 /*!40000 ALTER TABLE `tbsobre` DISABLE KEYS */;
 INSERT INTO `tbsobre` (`idsobre`,`imagem`,`video`,`descricao`,`contmsg`,`contato`,`cadastro`,`alteracao`,`ativo`,`imagem2`) VALUES 
- (1,'assets/img/about.jpg','https://www.youtube.com/watch?v=LXb3EKWsInQ','A melhor pizza de Minas Gerais! A Felps Pizza\'s destaca-se pela criatividade, composição de diferentes sabores e pela forma de assá-las.\r\nFeitas artesanalmente com massa fresca, aberta no ato do pedido e dentro dos mais rigorosos padrões de qualidade, criando um jeito regionalista de combinar sabores e texturas.','Reserve uma mesa','+55 33 9 1234-5678','2023-05-23 23:45:23','2023-07-03 13:33:09','A','assets/img/about-2.jpg'),
+ (1,'assets/img/about.jpg','https://www.youtube.com/watch?v=LXb3EKWsInQ','A melhor pizza de Minas Gerais! A Felps Pizzas destaca-se pela criatividade, composição de diferentes sabores e pela forma de assá-las.\r\nFeitas artesanalmente com massa fresca, aberta no ato do pedido e dentro dos mais rigorosos padrões de qualidade, criando um jeito regionalista de combinar sabores e texturas.','Reserve uma mesa','+55 33 9 1234-5678','2023-05-23 23:45:23','2023-07-03 13:33:09','A','assets/img/about-2.jpg'),
  (2,'./assets/img/testes/sobre/genshinp.png','https://www.youtube.com/watch?v=4oBpaBEMBIM','Genshin Impact é um jogo muito bom. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também. Por favor jogue também.','Jogue Agora','genshin.hoyoverse.com','2022-12-31 12:31:00','2023-06-05 19:38:32','D','./assets/img/testes/sobre/genshinv.jpg');
 /*!40000 ALTER TABLE `tbsobre` ENABLE KEYS */;
 

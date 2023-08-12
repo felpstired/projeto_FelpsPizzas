@@ -8,14 +8,14 @@ $email = $dadosForm['email'];
 $telefone = $dadosForm['telefone'];
 $cpf = $dadosForm['cpf'];
 
-$listar = listarRegistrosPar2('email','tbpessoas','A','email',$email);
+$listar = listarRegistros2('idpessoas', 'tbpessoas', 'idpessoas', $id);
 // var_dump($listar);
 
-if ($listar === false) {
+if ($listar != false) {
     $alt = alterarRegistros('tbpessoas', "nome = '$nome', email = '$email', telefone = '$telefone', cpf = '$cpf'", 'idpessoas', $id);
-    // var_dump($idpessoa);
+//    var_dump($id);
     if ($alt === false) {
-        echo 'Não foi possível registrar seus dados. ';
+        echo 'Não foi possível alterar seus dados. ';
         echo 'Tente novamente.';
         exit();
     } else {
@@ -23,8 +23,8 @@ if ($listar === false) {
         exit();
     }
 } else {    
-    echo 'Já existe uma conta com esse e-mail cadastrado no nosso site. ';
-    echo 'Tente novamente com outros dados.';
+    echo 'Ocorreu um erro ao tentar alterar seus dados. ';
+    echo 'Tente novamente mais tarde.';
     exit();
 }
 
